@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Reading Friction Tracker — a metacognitive reading activity for digital media studies. Mark moments of friction in a text and reflect on how your thinking changes.">
-<title>Reading Tracker</title>
+<meta name="description" content="Reading Friction Tracker — a bilingual (English / French) metacognitive reading activity for digital media studies. Mark moments of friction in a text and reflect on how your thinking changes.">
+<title data-i18n="doc_title">Reading Tracker</title>
 <style>
   /* ===== University of Mississippi palette ===== */
   :root{
@@ -55,11 +55,21 @@
     color:#fff;padding:26px 16px 22px;
   }
   header.site .inner{max-width:1080px;margin:0 auto;}
+  header.site .topbar{display:flex;justify-content:flex-end;margin:0 0 8px;}
   header.site h1{margin:0;font-size:clamp(1.5rem,4vw,2.1rem);letter-spacing:.2px;}
   header.site .tagline{margin:.35rem 0 0;color:#cfd6e6;font-size:1rem;max-width:60ch;}
   .accent-bar{height:6px;background:var(--um-red);}
   .byline{margin-top:12px;font-size:.85rem;color:#b9c2d8;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;}
   .byline strong{color:#fff;}
+
+  /* ===== Language toggle ===== */
+  .lang-toggle{display:inline-flex;border:1px solid rgba(255,255,255,.45);border-radius:999px;overflow:hidden;}
+  .lang-toggle button{
+    border:0;background:transparent;color:#cfd6e6;padding:6px 14px;font-size:.82rem;font-weight:800;
+    letter-spacing:.4px;cursor:pointer;font-family:inherit;
+  }
+  .lang-toggle button[aria-pressed="true"]{background:#fff;color:var(--um-blue);}
+  .lang-toggle button:not([aria-pressed="true"]):hover{color:#fff;}
 
   /* ===== Cards / sections ===== */
   section.card{
@@ -317,9 +327,15 @@
 <div class="accent-bar" aria-hidden="true"></div>
 <header class="site">
   <div class="inner">
-    <h1>Reading Friction Tracker</h1>
-    <p class="tagline">Notice where your thinking catches on a text &mdash; then watch how it changes. A metacognitive reading activity for digital media studies.</p>
-    <p class="byline"><span>Created by <strong>Marc Watkins</strong></span><span>&middot;</span><span>University of Mississippi</span><span>&middot;</span><span>CC&nbsp;BY&nbsp;4.0</span></p>
+    <div class="topbar">
+      <div class="lang-toggle" role="group" aria-label="Language / Langue">
+        <button id="langEn" type="button" aria-pressed="true">EN</button>
+        <button id="langFr" type="button" aria-pressed="false">FR</button>
+      </div>
+    </div>
+    <h1 data-i18n="header_h1">Reading Friction Tracker</h1>
+    <p class="tagline" data-i18n="header_tagline">Notice where your thinking catches on a text &mdash; then watch how it changes. A metacognitive reading activity for digital media studies.</p>
+    <p class="byline"><span><span data-i18n="byline_created">Created by</span> <strong>Marc Watkins</strong></span><span>&middot;</span><span data-i18n="byline_org">University of Mississippi</span><span>&middot;</span><span>CC&nbsp;BY&nbsp;4.0</span></p>
   </div>
 </header>
 
@@ -327,108 +343,108 @@
 
   <!-- HOW IT WORKS -->
   <section class="card how" aria-labelledby="how-h">
-    <h2 id="how-h"><span class="step-num" aria-hidden="true">i</span> How this works</h2>
-    <p class="lead">&ldquo;Friction&rdquo; is any moment a text makes you pause &mdash; confusion, agreement, doubt, a connection, something that matters, or a place you wish you had an example. Marking these moments and reflecting on them is how careful readers think about their own thinking.</p>
+    <h2 id="how-h"><span class="step-num" aria-hidden="true">i</span> <span data-i18n="how_h2">How this works</span></h2>
+    <p class="lead" data-i18n="how_lead">&ldquo;Friction&rdquo; is any moment a text makes you pause &mdash; confusion, agreement, doubt, a connection, something that matters, or a place you wish you had an example. Marking these moments and reflecting on them is how careful readers think about their own thinking.</p>
     <ol>
-      <li>Load a reading below: use the built-in sample, or paste your own assigned text.</li>
-      <li><strong>Select any words, phrase, or sentence</strong> in the reading (drag with a mouse, or press-and-hold on a phone).</li>
-      <li>In the bar at the bottom of the screen, tap <strong>one or more</strong> kinds of friction you felt &mdash; a single passage can be confusing <em>and</em> important at once &mdash; then press <strong>Add to log</strong>.</li>
-      <li>A short reflection prompt appears for each label in your <em>Friction log</em>. Answer each in a sentence or two.</li>
-      <li>Check the <em>Synthesis matrix</em> to see your tags side by side, answer the wrap-up questions, and <strong>generate a copyable summary</strong> to paste into Blackboard.</li>
+      <li data-i18n="how_li1">Load a reading below: use the built-in sample, or paste your own assigned text.</li>
+      <li data-i18n="how_li2"><strong>Select any words, phrase, or sentence</strong> in the reading (drag with a mouse, or press-and-hold on a phone).</li>
+      <li data-i18n="how_li3">In the bar at the bottom of the screen, tap <strong>one or more</strong> kinds of friction you felt &mdash; a single passage can be confusing <em>and</em> important at once &mdash; then press <strong>Add to log</strong>.</li>
+      <li data-i18n="how_li4">A short reflection prompt appears for each label in your <em>Friction log</em>. Answer each in a sentence or two.</li>
+      <li data-i18n="how_li5">Check the <em>Synthesis matrix</em> to see your tags side by side, answer the wrap-up questions, and <strong>generate a copyable summary</strong> to paste into Blackboard.</li>
     </ol>
-    <div class="legend" aria-label="Friction types">
-      <span class="chip"><span class="dot confusion" style="width:12px;height:12px;border-radius:50%"></span>Confusion</span>
-      <span class="chip"><span class="dot agreement" style="width:12px;height:12px;border-radius:50%"></span>Agreement</span>
-      <span class="chip"><span class="dot skepticism" style="width:12px;height:12px;border-radius:50%"></span>Skepticism</span>
-      <span class="chip"><span class="dot connection" style="width:12px;height:12px;border-radius:50%"></span>Connection</span>
-      <span class="chip"><span class="dot importance" style="width:12px;height:12px;border-radius:50%"></span>Importance</span>
-      <span class="chip"><span class="dot example" style="width:12px;height:12px;border-radius:50%"></span>Need an example</span>
+    <div class="legend" data-i18n-aria="aria_friction_types" aria-label="Friction types">
+      <span class="chip"><span class="dot confusion" style="width:12px;height:12px;border-radius:50%"></span><span data-i18n="type_confusion">Confusion</span></span>
+      <span class="chip"><span class="dot agreement" style="width:12px;height:12px;border-radius:50%"></span><span data-i18n="type_agreement">Agreement</span></span>
+      <span class="chip"><span class="dot skepticism" style="width:12px;height:12px;border-radius:50%"></span><span data-i18n="type_skepticism">Skepticism</span></span>
+      <span class="chip"><span class="dot connection" style="width:12px;height:12px;border-radius:50%"></span><span data-i18n="type_connection">Connection</span></span>
+      <span class="chip"><span class="dot importance" style="width:12px;height:12px;border-radius:50%"></span><span data-i18n="type_importance">Importance</span></span>
+      <span class="chip"><span class="dot example" style="width:12px;height:12px;border-radius:50%"></span><span data-i18n="type_example">Need an example</span></span>
     </div>
-    <p class="visually-quiet" style="margin-top:12px">Nothing you type is saved or sent anywhere. Everything stays in this browser tab and disappears when you close it, so copy your summary before you leave.</p>
+    <p class="visually-quiet" style="margin-top:12px" data-i18n="how_privacy">Nothing you type is saved or sent anywhere. Everything stays in this browser tab and disappears when you close it, so copy your summary before you leave.</p>
   </section>
 
   <!-- READING -->
   <section class="card" aria-labelledby="read-h">
-    <h2 id="read-h"><span class="step-num" aria-hidden="true">1</span> Your reading</h2>
+    <h2 id="read-h"><span class="step-num" aria-hidden="true">1</span> <span data-i18n="read_h2">Your reading</span></h2>
     <div class="source-toggle">
-      <div class="seg" role="group" aria-label="Choose reading source">
-        <button id="srcSample" type="button" aria-pressed="true">Use sample reading</button>
-        <button id="srcPaste" type="button" aria-pressed="false">Paste my own text</button>
+      <div class="seg" role="group" data-i18n-aria="aria_source" aria-label="Choose reading source">
+        <button id="srcSample" type="button" aria-pressed="true" data-i18n="src_sample">Use sample reading</button>
+        <button id="srcPaste" type="button" aria-pressed="false" data-i18n="src_paste">Paste my own text</button>
       </div>
     </div>
 
     <div id="pasteWrap" hidden>
-      <label for="pasteBox" class="sr-only">Paste your reading text</label>
-      <textarea id="pasteBox" class="paste" placeholder="Paste your assigned reading here. Separate paragraphs with a blank line, then click &ldquo;Load this text.&rdquo;"></textarea>
+      <label for="pasteBox" class="sr-only" data-i18n="paste_label">Paste your reading text</label>
+      <textarea id="pasteBox" class="paste" data-i18n-ph="paste_ph" placeholder="Paste your assigned reading here. Separate paragraphs with a blank line, then click &ldquo;Load this text.&rdquo;"></textarea>
       <div class="row-actions">
-        <button id="loadPaste" class="btn primary" type="button">Load this text</button>
-        <button id="clearMarksFromPaste" class="btn secondary" type="button">Clear all marks</button>
+        <button id="loadPaste" class="btn primary" type="button" data-i18n="load_btn">Load this text</button>
+        <button id="clearMarksFromPaste" class="btn secondary" type="button" data-i18n="clear_btn">Clear all marks</button>
       </div>
     </div>
 
     <hr style="border:0;border-top:1px solid var(--line);margin:16px 0" aria-hidden="true">
-    <article id="reading" class="reading" aria-label="Reading passage. Select text to tag a moment of friction."></article>
+    <article id="reading" class="reading" data-i18n-aria="reading_aria" aria-label="Reading passage. Select text to tag a moment of friction."></article>
   </section>
 
   <!-- FRICTION LOG -->
   <section class="card" aria-labelledby="log-h">
-    <h2 id="log-h"><span class="step-num" aria-hidden="true">2</span> Your friction log</h2>
-    <p class="lead">Each marked moment lands here with a reflection prompt for every label you applied. Aim for at least <strong>four</strong> markers across at least <strong>two</strong> different friction types &mdash; and notice the passages where more than one kind of friction overlaps.</p>
+    <h2 id="log-h"><span class="step-num" aria-hidden="true">2</span> <span data-i18n="log_h2">Your friction log</span></h2>
+    <p class="lead" data-i18n="log_lead">Each marked moment lands here with a reflection prompt for every label you applied. Aim for at least <strong>four</strong> markers across at least <strong>two</strong> different friction types &mdash; and notice the passages where more than one kind of friction overlaps.</p>
     <div class="count-grid" id="countGrid" aria-live="polite"></div>
-    <div id="log"><p class="log-empty">No moments marked yet. Select some text above to begin.</p></div>
+    <div id="log"><p class="log-empty"></p></div>
   </section>
 
   <!-- SYNTHESIS MATRIX -->
   <section class="card" aria-labelledby="mx-h">
-    <h2 id="mx-h"><span class="step-num" aria-hidden="true">3</span> Synthesis matrix</h2>
-    <p class="lead">Every passage you tagged, laid out against the six kinds of friction. Reading across a row shows where one passage triggered several reactions at once; reading down a column shows your habits as a reader. Use the patterns here to write your reflection below.</p>
+    <h2 id="mx-h"><span class="step-num" aria-hidden="true">3</span> <span data-i18n="mx_h2">Synthesis matrix</span></h2>
+    <p class="lead" data-i18n="mx_lead">Every passage you tagged, laid out against the six kinds of friction. Reading across a row shows where one passage triggered several reactions at once; reading down a column shows your habits as a reader. Use the patterns here to write your reflection below.</p>
     <div class="matrix-scroll">
-      <table class="matrix" id="matrixTable" aria-label="Matrix of tagged passages by friction type"></table>
+      <table class="matrix" id="matrixTable" data-i18n-aria="aria_matrix" aria-label="Matrix of tagged passages by friction type"></table>
     </div>
     <div id="patternNote" class="pattern-note" hidden></div>
   </section>
 
   <!-- SYNTHESIS -->
   <section class="card synth" aria-labelledby="syn-h">
-    <h2 id="syn-h"><span class="step-num" aria-hidden="true">4</span> Step back &amp; synthesize</h2>
-    <p class="lead">These three questions turn a pile of reactions into an account of how your reading <em>changed</em>.</p>
+    <h2 id="syn-h"><span class="step-num" aria-hidden="true">4</span> <span data-i18n="syn_h2">Step back &amp; synthesize</span></h2>
+    <p class="lead" data-i18n="syn_lead">These three questions turn a pile of reactions into an account of how your reading <em>changed</em>.</p>
 
-    <label for="nameField">Your name <span class="visually-quiet">(optional &mdash; used only in the summary text)</span></label>
-    <input id="nameField" class="name-input" type="text" placeholder="e.g., Jordan Rivera" autocomplete="off">
+    <label for="nameField"><span data-i18n="name_label">Your name</span> <span class="visually-quiet" data-i18n="name_optional">(optional &mdash; used only in the summary text)</span></label>
+    <input id="nameField" class="name-input" type="text" data-i18n-ph="name_ph" placeholder="e.g., Jordan Rivera" autocomplete="off">
 
-    <label for="q1">Where did you feel the most friction, and what made that part hard or sticky?</label>
+    <label for="q1" data-i18n="q1_label">Where did you feel the most friction, and what made that part hard or sticky?</label>
     <textarea id="q1"></textarea>
 
-    <label for="q2">How did your thinking change from the start of the reading to the end?</label>
+    <label for="q2" data-i18n="q2_label">How did your thinking change from the start of the reading to the end?</label>
     <textarea id="q2"></textarea>
 
-    <label for="q3">What will you do differently as a reader &mdash; next time you meet a text like this?</label>
+    <label for="q3" data-i18n="q3_label">What will you do differently as a reader &mdash; next time you meet a text like this?</label>
     <textarea id="q3"></textarea>
   </section>
 
   <!-- VISUAL REPORT -->
   <section class="card" aria-labelledby="sum-h">
-    <h2 id="sum-h"><span class="step-num" aria-hidden="true">5</span> Your visual report</h2>
-    <p class="lead">Turn everything above into a visual report &mdash; a friction snapshot, a distribution chart, your matrix, and every reflection &mdash; then save it as a PDF or web page to upload to Blackboard.</p>
+    <h2 id="sum-h"><span class="step-num" aria-hidden="true">5</span> <span data-i18n="sum_h2">Your visual report</span></h2>
+    <p class="lead" data-i18n="sum_lead">Turn everything above into a visual report &mdash; a friction snapshot, a distribution chart, your matrix, and every reflection &mdash; then save it as a PDF or web page to upload to Blackboard.</p>
     <div class="row-actions" style="margin-bottom:6px">
-      <button id="buildReport" class="btn primary" type="button">Build my report</button>
-      <button id="printReport" class="btn secondary" type="button">Save as PDF</button>
-      <button id="downloadReport" class="btn secondary" type="button">Download web page (.html)</button>
+      <button id="buildReport" class="btn primary" type="button" data-i18n="build_btn">Build my report</button>
+      <button id="printReport" class="btn secondary" type="button" data-i18n="print_btn">Save as PDF</button>
+      <button id="downloadReport" class="btn secondary" type="button" data-i18n="download_btn">Download web page (.html)</button>
       <span id="reportNote" class="copied-note" role="status" aria-live="polite"></span>
     </div>
-    <p class="visually-quiet" style="margin:0 0 14px">&ldquo;Save as PDF&rdquo; opens your browser&rsquo;s print box &mdash; pick <strong>Save as PDF</strong> as the destination. Upload the PDF (or the downloaded .html file) to your Blackboard assignment so your instructor can see it.</p>
+    <p class="visually-quiet" style="margin:0 0 14px" data-i18n="report_pdf_note">&ldquo;Save as PDF&rdquo; opens your browser&rsquo;s print box &mdash; pick <strong>Save as PDF</strong> as the destination. Upload the PDF (or the downloaded .html file) to your Blackboard assignment so your instructor can see it.</p>
 
     <div id="reportView" class="report" hidden></div>
 
     <details style="margin-top:16px;border:1px solid var(--line);border-radius:8px;padding:0 12px;background:#fff">
-      <summary style="cursor:pointer;font-weight:700;color:var(--um-blue);padding:11px 0">Plain-text version (for copy/paste)</summary>
+      <summary style="cursor:pointer;font-weight:700;color:var(--um-blue);padding:11px 0" data-i18n="plaintext_summary">Plain-text version (for copy/paste)</summary>
       <div class="row-actions" style="margin:6px 0 12px">
-        <button id="genSummary" class="btn secondary" type="button">Generate text</button>
-        <button id="copySummary" class="btn secondary" type="button">Copy to clipboard</button>
+        <button id="genSummary" class="btn secondary" type="button" data-i18n="gen_btn">Generate text</button>
+        <button id="copySummary" class="btn secondary" type="button" data-i18n="copy_btn">Copy to clipboard</button>
         <span id="copiedNote" class="copied-note" role="status" aria-live="polite"></span>
       </div>
-      <label for="summaryOut" class="sr-only">Generated reflection summary</label>
-      <textarea id="summaryOut" class="summary-out" readonly placeholder="Your text summary will appear here after you click &ldquo;Generate text.&rdquo;"></textarea>
+      <label for="summaryOut" class="sr-only" data-i18n="summary_out_label">Generated reflection summary</label>
+      <textarea id="summaryOut" class="summary-out" readonly data-i18n-ph="summary_ph" placeholder="Your text summary will appear here after you click &ldquo;Generate text.&rdquo;"></textarea>
     </details>
   </section>
 
@@ -436,30 +452,30 @@
   <footer class="site">
     <div class="lic">
       <span class="badge">CC BY 4.0</span>
-      <span>&ldquo;Reading Friction Tracker&rdquo; by <strong>Marc Watkins</strong>, University of Mississippi, is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>. You may share and adapt it with attribution.</span>
+      <span data-i18n="footer_license">&ldquo;Reading Friction Tracker&rdquo; by <strong>Marc Watkins</strong>, University of Mississippi, is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC&nbsp;BY&nbsp;4.0</a>. You may share and adapt it with attribution.</span>
     </div>
     <details class="ai">
-      <summary>AI disclosure</summary>
-      <p>This activity was developed by Marc Watkins with the assistance of a generative AI tool, which helped draft and structure the HTML, CSS, and JavaScript. All pedagogical design choices, prompts, and final review are the author&rsquo;s. The activity itself runs entirely in your browser and contains no AI features &mdash; it does not generate, evaluate, or transmit any of your responses.</p>
+      <summary data-i18n="ai_summary">AI disclosure</summary>
+      <p data-i18n="ai_para">This activity was developed by Marc Watkins with the assistance of a generative AI tool, which helped draft and structure the HTML, CSS, and JavaScript &mdash; and to produce the French translation. All pedagogical design choices, prompts, and final review are the author&rsquo;s. The activity itself runs entirely in your browser and contains no AI features &mdash; it does not generate, evaluate, or transmit any of your responses.</p>
     </details>
   </footer>
 </main>
 
 <!-- STICKY TAGGING BAR -->
-<div class="tagbar" role="region" aria-label="Tag selected text">
+<div class="tagbar" role="region" data-i18n-aria="aria_tagbar" aria-label="Tag selected text">
   <div class="tb-inner">
-    <p class="sel-preview" id="selPreview">Select text in the reading above, then choose how it made you think.</p>
+    <p class="sel-preview" id="selPreview"></p>
     <div class="tag-buttons" id="tagButtons">
-      <button type="button" data-type="confusion" aria-pressed="false" disabled><span class="dot confusion"></span>Confused</button>
-      <button type="button" data-type="agreement" aria-pressed="false" disabled><span class="dot agreement"></span>I agree</button>
-      <button type="button" data-type="skepticism" aria-pressed="false" disabled><span class="dot skepticism"></span>Skeptical</button>
-      <button type="button" data-type="connection" aria-pressed="false" disabled><span class="dot connection"></span>Connection</button>
-      <button type="button" data-type="importance" aria-pressed="false" disabled><span class="dot importance"></span>Important</button>
-      <button type="button" data-type="example" aria-pressed="false" disabled><span class="dot example"></span>Need example</button>
+      <button type="button" data-type="confusion" aria-pressed="false" disabled><span class="dot confusion"></span><span data-i18n="tag_confusion">Confused</span></button>
+      <button type="button" data-type="agreement" aria-pressed="false" disabled><span class="dot agreement"></span><span data-i18n="tag_agreement">I agree</span></button>
+      <button type="button" data-type="skepticism" aria-pressed="false" disabled><span class="dot skepticism"></span><span data-i18n="tag_skepticism">Skeptical</span></button>
+      <button type="button" data-type="connection" aria-pressed="false" disabled><span class="dot connection"></span><span data-i18n="tag_connection">Connection</span></button>
+      <button type="button" data-type="importance" aria-pressed="false" disabled><span class="dot importance"></span><span data-i18n="tag_importance">Important</span></button>
+      <button type="button" data-type="example" aria-pressed="false" disabled><span class="dot example"></span><span data-i18n="tag_example">Need example</span></button>
     </div>
     <div class="tb-actions">
-      <button id="addTags" class="btn primary" type="button" disabled>Add to log</button>
-      <span id="tbHint" class="visually-quiet">Pick one or more labels for your selection.</span>
+      <button id="addTags" class="btn primary" type="button" disabled data-i18n="add_btn">Add to log</button>
+      <span id="tbHint" class="visually-quiet"></span>
     </div>
   </div>
 </div>
@@ -468,27 +484,370 @@
 (function(){
   "use strict";
 
-  /* ---------- Friction type config ---------- */
-  var TYPES = {
-    confusion:  {label:"Confusion",       prompt:"What exactly is unclear here? Name the specific word, idea, or jump that lost you — and what would help it click."},
-    agreement:  {label:"Agreement",       prompt:"Why do you agree? Point to an experience, an example, or evidence that backs this up for you."},
-    skepticism: {label:"Skepticism",      prompt:"What makes you doubt this? What’s missing, and what would it take to change your mind?"},
-    connection: {label:"Connection",      prompt:"What does this connect to — another reading, a class idea, the news, or your own life? Spell out the link."},
-    importance: {label:"Importance",      prompt:"Why does this matter? How might you use this idea or carry it into your own work?"},
-    example:    {label:"Need an example", prompt:"What kind of example would make this concrete? Try sketching a quick one of your own."}
+  /* ===================================================================
+     Bilingual dictionary (English / French)
+     =================================================================== */
+  var I18N = {
+    en: {
+      doc_title:"Reading Tracker",
+      header_h1:"Reading Friction Tracker",
+      header_tagline:"Notice where your thinking catches on a text &mdash; then watch how it changes. A metacognitive reading activity for digital media studies.",
+      byline_created:"Created by",
+      byline_org:"University of Mississippi",
+
+      how_h2:"How this works",
+      how_lead:"&ldquo;Friction&rdquo; is any moment a text makes you pause &mdash; confusion, agreement, doubt, a connection, something that matters, or a place you wish you had an example. Marking these moments and reflecting on them is how careful readers think about their own thinking.",
+      how_li1:"Load a reading below: use the built-in sample, or paste your own assigned text.",
+      how_li2:"<strong>Select any words, phrase, or sentence</strong> in the reading (drag with a mouse, or press-and-hold on a phone).",
+      how_li3:"In the bar at the bottom of the screen, tap <strong>one or more</strong> kinds of friction you felt &mdash; a single passage can be confusing <em>and</em> important at once &mdash; then press <strong>Add to log</strong>.",
+      how_li4:"A short reflection prompt appears for each label in your <em>Friction log</em>. Answer each in a sentence or two.",
+      how_li5:"Check the <em>Synthesis matrix</em> to see your tags side by side, answer the wrap-up questions, and <strong>generate a copyable summary</strong> to paste into Blackboard.",
+      how_privacy:"Nothing you type is saved or sent anywhere. Everything stays in this browser tab and disappears when you close it, so copy your summary before you leave.",
+
+      read_h2:"Your reading",
+      aria_source:"Choose reading source",
+      aria_friction_types:"Friction types",
+      aria_matrix:"Matrix of tagged passages by friction type",
+      aria_tagbar:"Tag selected text",
+      summary_out_label:"Generated reflection summary",
+      src_sample:"Use sample reading",
+      src_paste:"Paste my own text",
+      paste_label:"Paste your reading text",
+      paste_ph:"Paste your assigned reading here. Separate paragraphs with a blank line, then click “Load this text.”",
+      load_btn:"Load this text",
+      clear_btn:"Clear all marks",
+      reading_aria:"Reading passage. Select text to tag a moment of friction.",
+
+      log_h2:"Your friction log",
+      log_lead:"Each marked moment lands here with a reflection prompt for every label you applied. Aim for at least <strong>four</strong> markers across at least <strong>two</strong> different friction types &mdash; and notice the passages where more than one kind of friction overlaps.",
+
+      mx_h2:"Synthesis matrix",
+      mx_lead:"Every passage you tagged, laid out against the six kinds of friction. Reading across a row shows where one passage triggered several reactions at once; reading down a column shows your habits as a reader. Use the patterns here to write your reflection below.",
+
+      syn_h2:"Step back &amp; synthesize",
+      syn_lead:"These three questions turn a pile of reactions into an account of how your reading <em>changed</em>.",
+      name_label:"Your name",
+      name_optional:"(optional &mdash; used only in the summary text)",
+      name_ph:"e.g., Jordan Rivera",
+      q1_label:"Where did you feel the most friction, and what made that part hard or sticky?",
+      q2_label:"How did your thinking change from the start of the reading to the end?",
+      q3_label:"What will you do differently as a reader — next time you meet a text like this?",
+
+      sum_h2:"Your visual report",
+      sum_lead:"Turn everything above into a visual report &mdash; a friction snapshot, a distribution chart, your matrix, and every reflection &mdash; then save it as a PDF or web page to upload to Blackboard.",
+      build_btn:"Build my report",
+      print_btn:"Save as PDF",
+      download_btn:"Download web page (.html)",
+      report_pdf_note:"&ldquo;Save as PDF&rdquo; opens your browser&rsquo;s print box &mdash; pick <strong>Save as PDF</strong> as the destination. Upload the PDF (or the downloaded .html file) to your Blackboard assignment so your instructor can see it.",
+      plaintext_summary:"Plain-text version (for copy/paste)",
+      gen_btn:"Generate text",
+      copy_btn:"Copy to clipboard",
+      summary_ph:"Your text summary will appear here after you click “Generate text.”",
+
+      footer_license:"&ldquo;Reading Friction Tracker&rdquo; by <strong>Marc Watkins</strong>, University of Mississippi, is licensed under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC&nbsp;BY&nbsp;4.0</a>. You may share and adapt it with attribution.",
+      ai_summary:"AI disclosure",
+      ai_para:"This activity was developed by Marc Watkins with the assistance of a generative AI tool, which helped draft and structure the HTML, CSS, and JavaScript &mdash; and to produce the French translation. All pedagogical design choices, prompts, and final review are the author&rsquo;s. The activity itself runs entirely in your browser and contains no AI features &mdash; it does not generate, evaluate, or transmit any of your responses.",
+
+      /* friction types */
+      type_confusion:"Confusion",
+      type_agreement:"Agreement",
+      type_skepticism:"Skepticism",
+      type_connection:"Connection",
+      type_importance:"Importance",
+      type_example:"Need an example",
+      prompt_confusion:"What exactly is unclear here? Name the specific word, idea, or jump that lost you — and what would help it click.",
+      prompt_agreement:"Why do you agree? Point to an experience, an example, or evidence that backs this up for you.",
+      prompt_skepticism:"What makes you doubt this? What’s missing, and what would it take to change your mind?",
+      prompt_connection:"What does this connect to — another reading, a class idea, the news, or your own life? Spell out the link.",
+      prompt_importance:"Why does this matter? How might you use this idea or carry it into your own work?",
+      prompt_example:"What kind of example would make this concrete? Try sketching a quick one of your own.",
+
+      /* tag-bar buttons */
+      tag_confusion:"Confused",
+      tag_agreement:"I agree",
+      tag_skepticism:"Skeptical",
+      tag_connection:"Connection",
+      tag_importance:"Important",
+      tag_example:"Need example",
+      add_btn:"Add to log",
+
+      /* dynamic UI */
+      tag_selPreviewDefault:"Select text in the reading above, then choose how it made you think.",
+      tag_selPrefix:"Selected: ",
+      tag_selSuffix:" — choose one or more labels.",
+      tag_hintDefault:"Pick one or more labels for your selection.",
+      tag_hintOne:"1 label selected — press Add to log.",
+      tag_hintMany:"{n} labels selected — press Add to log.",
+      log_empty:"No moments marked yet. Select some text above to begin.",
+      count_passagesWord:"passage(s)",
+      mx_empty:"Your matrix fills in as you tag passages. Mark a few moments above to see the pattern.",
+      mx_colHash:"#",
+      mx_colPassage:"Passage",
+      pat_tagged:"You have tagged <strong>{n}</strong> passage(s).",
+      pat_frequent:"Your most frequent reaction is <strong>{label}</strong> ({n}).",
+      pat_overlaps:"<strong>{n}</strong> passage(s) triggered more than one kind of friction — those overlaps are often the richest material for your reflection.",
+      pat_tip:"Tip: try tagging a passage with two labels at once to surface a tension worth writing about.",
+      alert_cross:"That selection crossed too many elements to mark cleanly. Try selecting within a single paragraph.",
+      confirm_replace:"Loading a new reading will clear your current marks and reflections. Continue?",
+      alert_paste_empty:"Paste some text first.",
+      confirm_clear:"Clear all marks and reflections? The reading text stays.",
+      reading_empty_hint:"No text loaded. Paste your reading and click “Load this text.”",
+      btn_find:"Find in text",
+      btn_delete:"Delete",
+      refl_ph:"Your reflection…",
+      refl_aria:"Reflection for {label} on this passage",
+      mark_aria:"{labels} mark: {text}",
+      mark_title:"{labels} — click to jump to your reflection",
+      alert_report_build:"Tag at least one passage before building your report.",
+      alert_report_print:"Tag at least one passage before saving a report.",
+      alert_report_download:"Tag at least one passage before downloading a report.",
+      note_report_built:"Report built below.",
+      note_downloaded:"Downloaded.",
+      note_copied:"Copied!",
+      note_copy_fail:"Press Ctrl/Cmd+C to copy.",
+
+      /* visual report body */
+      report_title:"Reading Friction Tracker — Reflection Report",
+      report_sub:"A metacognitive reading activity for digital media studies",
+      report_glance:"Friction at a glance",
+      report_stat_passages:"passages tagged",
+      report_stat_labels:"friction labels",
+      report_stat_multi:"multi-label passages",
+      report_stat_types:"of 6 friction types used",
+      report_dist:"How your friction was distributed",
+      report_none:"No passages tagged.",
+      report_mx:"Synthesis matrix",
+      report_passrefl:"Passages &amp; reflections",
+      report_blank:"(left blank)",
+      report_changed:"How my thinking changed",
+      report_q1:"Where I felt the most friction, and why",
+      report_q2:"How my thinking changed from start to end",
+      report_q3:"What I&rsquo;ll do differently as a reader next time",
+      report_footer:"&ldquo;Reading Friction Tracker&rdquo; by Marc Watkins, University of Mississippi, licensed under CC BY 4.0. This activity was developed with the assistance of a generative AI tool; all pedagogical design and review are the author&rsquo;s. No student data is collected, stored, or transmitted.",
+
+      /* plain-text summary */
+      sum_title:"READING FRICTION TRACKER — REFLECTION SUMMARY",
+      sum_name:"Name: ",
+      sum_date:"Date: ",
+      sum_glance:"FRICTION AT A GLANCE",
+      sum_marked:"Passages marked: ",
+      sum_multi:"Passages with more than one label: ",
+      sum_mx_legend:"SYNTHESIS MATRIX  (Cf=Confusion  Ag=Agreement  Sk=Skepticism  Cn=Connection  Im=Importance  Ex=Example)",
+      sum_mx_header:"  #  | Cf Ag Sk Cn Im Ex | Passage",
+      sum_moments:"MOMENTS OF FRICTION",
+      sum_none_tagged:"(No passages were tagged.)",
+      sum_none_marked:"(No moments were marked.)",
+      sum_passage:"Passage: ",
+      sum_labels:"Labels: ",
+      sum_blank:"(left blank)",
+      sum_changed:"HOW MY THINKING CHANGED",
+      sum_q1:"Where I felt the most friction:",
+      sum_q2:"How my thinking changed from start to end:",
+      sum_q3:"What I’ll do differently as a reader next time:",
+      sum_footer:"Reading Friction Tracker by Marc Watkins (University of Mississippi), CC BY 4.0.",
+
+      download_filename:"reading-friction",
+      report_doc_title:"Reading Friction Report",
+      locale:"en-US"
+    },
+
+    fr: {
+      doc_title:"Suivi de la friction de lecture",
+      header_h1:"Suivi de la friction de lecture",
+      header_tagline:"Remarquez où votre pensée accroche sur un texte &mdash; puis observez comment elle change. Une activité de lecture métacognitive pour les études en médias numériques.",
+      byline_created:"Créé par",
+      byline_org:"Université du Mississippi",
+
+      how_h2:"Comment ça marche",
+      how_lead:"La &laquo;&nbsp;friction&nbsp;&raquo; désigne tout moment où un texte vous fait marquer une pause &mdash; confusion, accord, doute, une connexion, quelque chose d’important, ou un endroit où vous auriez aimé un exemple. Repérer ces moments et y réfléchir, c’est ainsi que les lecteurs attentifs réfléchissent à leur propre pensée.",
+      how_li1:"Chargez une lecture ci-dessous&nbsp;: utilisez l’exemple intégré, ou collez votre propre texte.",
+      how_li2:"<strong>Sélectionnez un mot, une expression ou une phrase</strong> dans la lecture (glissez avec la souris, ou appuyez longuement sur un téléphone).",
+      how_li3:"Dans la barre en bas de l’écran, touchez <strong>un ou plusieurs</strong> types de friction ressentis &mdash; un même passage peut être à la fois déroutant <em>et</em> important &mdash; puis appuyez sur <strong>Ajouter au journal</strong>.",
+      how_li4:"Une courte invite de réflexion apparaît pour chaque étiquette dans votre <em>Journal de friction</em>. Répondez à chacune en une phrase ou deux.",
+      how_li5:"Consultez la <em>Matrice de synthèse</em> pour voir vos étiquettes côte à côte, répondez aux questions de bilan, et <strong>générez un résumé à copier</strong> pour le déposer dans Blackboard.",
+      how_privacy:"Rien de ce que vous saisissez n’est enregistré ni envoyé où que ce soit. Tout reste dans cet onglet du navigateur et disparaît à sa fermeture&nbsp;; copiez donc votre résumé avant de partir.",
+
+      read_h2:"Votre lecture",
+      aria_source:"Choisir la source de lecture",
+      aria_friction_types:"Types de friction",
+      aria_matrix:"Matrice des passages étiquetés par type de friction",
+      aria_tagbar:"Étiqueter le texte sélectionné",
+      summary_out_label:"Résumé de réflexion généré",
+      src_sample:"Utiliser l’exemple",
+      src_paste:"Coller mon propre texte",
+      paste_label:"Collez votre texte de lecture",
+      paste_ph:"Collez votre lecture assignée ici. Séparez les paragraphes par une ligne vide, puis cliquez sur « Charger ce texte ».",
+      load_btn:"Charger ce texte",
+      clear_btn:"Effacer toutes les marques",
+      reading_aria:"Passage de lecture. Sélectionnez du texte pour marquer un moment de friction.",
+
+      log_h2:"Votre journal de friction",
+      log_lead:"Chaque moment marqué arrive ici avec une invite de réflexion pour chaque étiquette appliquée. Visez au moins <strong>quatre</strong> marques réparties sur au moins <strong>deux</strong> types de friction différents &mdash; et repérez les passages où plusieurs types de friction se chevauchent.",
+
+      mx_h2:"Matrice de synthèse",
+      mx_lead:"Chaque passage que vous avez étiqueté, disposé face aux six types de friction. Lire une ligne montre où un passage a déclenché plusieurs réactions à la fois&nbsp;; lire une colonne révèle vos habitudes de lecteur. Servez-vous de ces motifs pour rédiger votre réflexion ci-dessous.",
+
+      syn_h2:"Prenez du recul et synthétisez",
+      syn_lead:"Ces trois questions transforment un amas de réactions en un récit de la façon dont votre lecture a <em>changé</em>.",
+      name_label:"Votre nom",
+      name_optional:"(facultatif &mdash; utilisé uniquement dans le texte du résumé)",
+      name_ph:"p. ex., Jordan Rivera",
+      q1_label:"Où avez-vous ressenti le plus de friction, et qu’est-ce qui a rendu ce passage difficile ou accrocheur ?",
+      q2_label:"Comment votre pensée a-t-elle changé du début à la fin de la lecture ?",
+      q3_label:"Que ferez-vous différemment en tant que lecteur — la prochaine fois que vous rencontrerez un texte de ce genre ?",
+
+      sum_h2:"Votre rapport visuel",
+      sum_lead:"Transformez tout ce qui précède en un rapport visuel &mdash; un aperçu de la friction, un graphique de répartition, votre matrice et toutes vos réflexions &mdash; puis enregistrez-le en PDF ou en page web à déposer dans Blackboard.",
+      build_btn:"Générer mon rapport",
+      print_btn:"Enregistrer en PDF",
+      download_btn:"Télécharger la page web (.html)",
+      report_pdf_note:"&laquo;&nbsp;Enregistrer en PDF&nbsp;&raquo; ouvre la boîte d’impression de votre navigateur &mdash; choisissez <strong>Enregistrer en PDF</strong> comme destination. Déposez le PDF (ou le fichier .html téléchargé) dans votre devoir Blackboard pour que votre enseignant&middot;e puisse le voir.",
+      plaintext_summary:"Version texte brut (à copier-coller)",
+      gen_btn:"Générer le texte",
+      copy_btn:"Copier dans le presse-papiers",
+      summary_ph:"Votre résumé en texte apparaîtra ici après avoir cliqué sur « Générer le texte ».",
+
+      footer_license:"&laquo;&nbsp;Suivi de la friction de lecture&nbsp;&raquo; par <strong>Marc Watkins</strong>, Université du Mississippi, est sous licence <a href=\"https://creativecommons.org/licenses/by/4.0/deed.fr\" target=\"_blank\" rel=\"noopener\">CC&nbsp;BY&nbsp;4.0</a>. Vous pouvez le partager et l’adapter avec attribution.",
+      ai_summary:"Divulgation IA",
+      ai_para:"Cette activité a été développée par Marc Watkins avec l’aide d’un outil d’IA générative, qui a contribué à rédiger et à structurer le HTML, le CSS et le JavaScript &mdash; et à produire la traduction française. Tous les choix de conception pédagogique, les invites et la révision finale relèvent de l’auteur. L’activité elle-même fonctionne entièrement dans votre navigateur et ne contient aucune fonction d’IA &mdash; elle ne génère, n’évalue ni ne transmet aucune de vos réponses.",
+
+      type_confusion:"Confusion",
+      type_agreement:"Accord",
+      type_skepticism:"Scepticisme",
+      type_connection:"Connexion",
+      type_importance:"Importance",
+      type_example:"Besoin d’un exemple",
+      prompt_confusion:"Qu’est-ce qui n’est pas clair ici ? Nommez le mot, l’idée ou le saut précis qui vous a perdu — et ce qui aiderait à comprendre.",
+      prompt_agreement:"Pourquoi êtes-vous d’accord ? Appuyez-vous sur une expérience, un exemple ou une preuve qui le confirme pour vous.",
+      prompt_skepticism:"Qu’est-ce qui vous fait douter ? Que manque-t-il, et que faudrait-il pour vous faire changer d’avis ?",
+      prompt_connection:"À quoi cela se rattache-t-il — une autre lecture, une idée vue en cours, l’actualité, votre propre vie ? Précisez le lien.",
+      prompt_importance:"Pourquoi est-ce important ? Comment pourriez-vous utiliser cette idée ou la reprendre dans votre propre travail ?",
+      prompt_example:"Quel exemple rendrait cela concret ? Essayez d’en esquisser un vous-même.",
+
+      tag_confusion:"Confus·e",
+      tag_agreement:"D’accord",
+      tag_skepticism:"Sceptique",
+      tag_connection:"Connexion",
+      tag_importance:"Important",
+      tag_example:"Besoin d’exemple",
+      add_btn:"Ajouter au journal",
+
+      tag_selPreviewDefault:"Sélectionnez du texte dans la lecture ci-dessus, puis choisissez ce qu’il vous a fait penser.",
+      tag_selPrefix:"Sélection : ",
+      tag_selSuffix:" — choisissez une ou plusieurs étiquettes.",
+      tag_hintDefault:"Choisissez une ou plusieurs étiquettes pour votre sélection.",
+      tag_hintOne:"1 étiquette sélectionnée — appuyez sur Ajouter au journal.",
+      tag_hintMany:"{n} étiquettes sélectionnées — appuyez sur Ajouter au journal.",
+      log_empty:"Aucun moment marqué pour l’instant. Sélectionnez du texte ci-dessus pour commencer.",
+      count_passagesWord:"passage(s)",
+      mx_empty:"Votre matrice se remplit à mesure que vous étiquetez des passages. Marquez quelques moments ci-dessus pour voir le motif.",
+      mx_colHash:"#",
+      mx_colPassage:"Passage",
+      pat_tagged:"Vous avez étiqueté <strong>{n}</strong> passage(s).",
+      pat_frequent:"Votre réaction la plus fréquente est <strong>{label}</strong> ({n}).",
+      pat_overlaps:"<strong>{n}</strong> passage(s) ont déclenché plus d’un type de friction — ces chevauchements sont souvent la matière la plus riche pour votre réflexion.",
+      pat_tip:"Astuce : essayez d’étiqueter un passage avec deux étiquettes à la fois pour faire ressortir une tension digne d’analyse.",
+      alert_cross:"Cette sélection traverse trop d’éléments pour être marquée proprement. Essayez de sélectionner à l’intérieur d’un seul paragraphe.",
+      confirm_replace:"Charger une nouvelle lecture effacera vos marques et réflexions actuelles. Continuer ?",
+      alert_paste_empty:"Collez d’abord du texte.",
+      confirm_clear:"Effacer toutes les marques et réflexions ? Le texte de la lecture reste.",
+      reading_empty_hint:"Aucun texte chargé. Collez votre lecture et cliquez sur « Charger ce texte ».",
+      btn_find:"Repérer dans le texte",
+      btn_delete:"Supprimer",
+      refl_ph:"Votre réflexion…",
+      refl_aria:"Réflexion pour {label} sur ce passage",
+      mark_aria:"{labels} marque : {text}",
+      mark_title:"{labels} — cliquez pour aller à votre réflexion",
+      alert_report_build:"Étiquetez au moins un passage avant de générer votre rapport.",
+      alert_report_print:"Étiquetez au moins un passage avant d’enregistrer un rapport.",
+      alert_report_download:"Étiquetez au moins un passage avant de télécharger un rapport.",
+      note_report_built:"Rapport généré ci-dessous.",
+      note_downloaded:"Téléchargé.",
+      note_copied:"Copié !",
+      note_copy_fail:"Appuyez sur Ctrl/Cmd+C pour copier.",
+
+      report_title:"Suivi de la friction de lecture — Rapport de réflexion",
+      report_sub:"Une activité de lecture métacognitive pour les études en médias numériques",
+      report_glance:"La friction en un coup d’œil",
+      report_stat_passages:"passages étiquetés",
+      report_stat_labels:"étiquettes de friction",
+      report_stat_multi:"passages multi-étiquettes",
+      report_stat_types:"types de friction sur 6 utilisés",
+      report_dist:"Répartition de votre friction",
+      report_none:"Aucun passage étiqueté.",
+      report_mx:"Matrice de synthèse",
+      report_passrefl:"Passages et réflexions",
+      report_blank:"(laissé vide)",
+      report_changed:"Comment ma pensée a changé",
+      report_q1:"Où j’ai ressenti le plus de friction, et pourquoi",
+      report_q2:"Comment ma pensée a changé du début à la fin",
+      report_q3:"Ce que je ferai différemment en tant que lecteur la prochaine fois",
+      report_footer:"&laquo;&nbsp;Suivi de la friction de lecture&nbsp;&raquo; par Marc Watkins, Université du Mississippi, sous licence CC BY 4.0. Cette activité a été développée avec l’aide d’un outil d’IA générative ; toute la conception pédagogique et la révision relèvent de l’auteur. Aucune donnée d’étudiant n’est collectée, stockée ou transmise.",
+
+      sum_title:"SUIVI DE LA FRICTION DE LECTURE — RÉSUMÉ DE RÉFLEXION",
+      sum_name:"Nom : ",
+      sum_date:"Date : ",
+      sum_glance:"LA FRICTION EN UN COUP D’ŒIL",
+      sum_marked:"Passages marqués : ",
+      sum_multi:"Passages avec plus d’une étiquette : ",
+      sum_mx_legend:"MATRICE DE SYNTHÈSE  (Co=Confusion  Ac=Accord  Sc=Scepticisme  Cx=Connexion  Im=Importance  Ex=Exemple)",
+      sum_mx_header:"  #  | Co Ac Sc Cx Im Ex | Passage",
+      sum_moments:"MOMENTS DE FRICTION",
+      sum_none_tagged:"(Aucun passage n’a été étiqueté.)",
+      sum_none_marked:"(Aucun moment n’a été marqué.)",
+      sum_passage:"Passage : ",
+      sum_labels:"Étiquettes : ",
+      sum_blank:"(laissé vide)",
+      sum_changed:"COMMENT MA PENSÉE A CHANGÉ",
+      sum_q1:"Où j’ai ressenti le plus de friction :",
+      sum_q2:"Comment ma pensée a changé du début à la fin :",
+      sum_q3:"Ce que je ferai différemment en tant que lecteur la prochaine fois :",
+      sum_footer:"Suivi de la friction de lecture par Marc Watkins (Université du Mississippi), CC BY 4.0.",
+
+      download_filename:"friction-de-lecture",
+      report_doc_title:"Rapport de friction de lecture",
+      locale:"fr-FR"
+    }
   };
 
-  var SAMPLE = [
-    "Every time you scroll, a set of invisible decisions has already been made on your behalf. The order of the posts, the ads tucked between them, the comment surfaced first — none of it is neutral, and none of it is accidental. A recommendation system has ranked the world’s available content against a prediction about you.",
-    "We tend to talk about these systems as if they simply show us what we want. But “what we want” is not a fixed thing the algorithm discovers; it is partly a thing the algorithm produces. The more the feed learns which posts keep you scrolling, the more it shapes the very preferences it claims to be serving.",
-    "This is why media literacy can no longer stop at asking “is this source true?” The harder question is structural: why am I seeing this, in this order, right now? Who benefits from my attention landing here rather than somewhere else? A literate reader of digital media has to read the container, not just the content.",
-    "None of this means the individual is powerless. Friction — the small act of pausing, doubting, or stepping outside the default — is itself a form of resistance. When you notice the seams in a system designed to be seamless, you reclaim a measure of authorship over your own attention."
-  ];
+  /* Sample reading per language */
+  var SAMPLE = {
+    en:[
+      "Every time you scroll, a set of invisible decisions has already been made on your behalf. The order of the posts, the ads tucked between them, the comment surfaced first — none of it is neutral, and none of it is accidental. A recommendation system has ranked the world’s available content against a prediction about you.",
+      "We tend to talk about these systems as if they simply show us what we want. But “what we want” is not a fixed thing the algorithm discovers; it is partly a thing the algorithm produces. The more the feed learns which posts keep you scrolling, the more it shapes the very preferences it claims to be serving.",
+      "This is why media literacy can no longer stop at asking “is this source true?” The harder question is structural: why am I seeing this, in this order, right now? Who benefits from my attention landing here rather than somewhere else? A literate reader of digital media has to read the container, not just the content.",
+      "None of this means the individual is powerless. Friction — the small act of pausing, doubting, or stepping outside the default — is itself a form of resistance. When you notice the seams in a system designed to be seamless, you reclaim a measure of authorship over your own attention."
+    ],
+    fr:[
+      "Chaque fois que vous faites défiler l’écran, une série de décisions invisibles a déjà été prise à votre place. L’ordre des publications, les publicités glissées entre elles, le commentaire affiché en premier — rien de tout cela n’est neutre, et rien n’est accidentel. Un système de recommandation a classé l’ensemble des contenus disponibles dans le monde en fonction d’une prédiction à votre sujet.",
+      "Nous avons tendance à parler de ces systèmes comme s’ils se contentaient de nous montrer ce que nous voulons. Mais « ce que nous voulons » n’est pas une donnée fixe que l’algorithme découvre ; c’est en partie une chose que l’algorithme produit. Plus le fil d’actualité apprend quelles publications vous retiennent, plus il façonne les préférences mêmes qu’il prétend servir.",
+      "C’est pourquoi l’éducation aux médias ne peut plus se limiter à demander « cette source est-elle fiable ? ». La question la plus difficile est structurelle : pourquoi est-ce que je vois ceci, dans cet ordre, maintenant ? À qui profite le fait que mon attention se pose ici plutôt qu’ailleurs ? Un lecteur averti des médias numériques doit lire le contenant, et pas seulement le contenu.",
+      "Rien de tout cela ne signifie que l’individu est impuissant. La friction — ce petit geste de s’arrêter, de douter ou de sortir du réglage par défaut — est en soi une forme de résistance. Lorsque vous remarquez les coutures d’un système conçu pour être sans couture, vous reprenez une part de maîtrise sur votre propre attention."
+    ]
+  };
+
+  /* ---------- Language state & helpers ---------- */
+  var LANG = "en";
+  function t(key){ var s = I18N[LANG][key]; return s==null ? key : s; }
+  function tf(key, map){
+    var s = t(key);
+    if(map){ Object.keys(map).forEach(function(k){ s = s.split("{"+k+"}").join(map[k]); }); }
+    return s;
+  }
+  function typeLabel(type){ return t("type_"+type); }
+  function typePrompt(type){ return t("prompt_"+type); }
 
   /* ---------- Helpers ---------- */
   function safeScroll(el,opts){ if(el && typeof el.scrollIntoView==="function"){ try{ el.scrollIntoView(opts); }catch(e){} } }
+  function escapeHTML(s){return String(s).replace(/[&<>"]/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c];});}
 
   var TYPE_ORDER = ["confusion","agreement","skepticism","connection","importance","example"];
+
+  /* Friction-type colors (used for charts/report) */
+  var COLORS = {
+    confusion:"#8e44ad", agreement:"#1e7d4f", skepticism:"#b8860b",
+    connection:"#1f6f9e", importance:"#CE1126", example:"#c2410c"
+  };
 
   /* ---------- State ---------- */
   var markers = [];          // {id, types:[...], text, node, reflections:{type:str}}
@@ -496,6 +855,7 @@
   var lastRange = null;      // saved Range for the captured selection
   var lastText = "";         // text of captured selection
   var pendingTypes = [];     // labels toggled for the captured selection
+  var sourceMode = "sample"; // "sample" | "paste"
 
   /* ---------- Elements ---------- */
   var readingEl = document.getElementById("reading");
@@ -509,17 +869,38 @@
   var patternNote = document.getElementById("patternNote");
   var pasteWrap = document.getElementById("pasteWrap");
   var pasteBox = document.getElementById("pasteBox");
+  var reportView = document.getElementById("reportView");
+  var langEn = document.getElementById("langEn");
+  var langFr = document.getElementById("langFr");
+
+  /* ---------- Apply static translations to the DOM ---------- */
+  function applyI18n(){
+    document.documentElement.lang = LANG;
+    document.title = t("doc_title");
+    document.querySelectorAll("[data-i18n]").forEach(function(el){
+      var k = el.getAttribute("data-i18n");
+      if(I18N[LANG][k]!=null) el.innerHTML = I18N[LANG][k];
+    });
+    document.querySelectorAll("[data-i18n-ph]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-ph");
+      if(I18N[LANG][k]!=null) el.setAttribute("placeholder", I18N[LANG][k]);
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function(el){
+      var k = el.getAttribute("data-i18n-aria");
+      if(I18N[LANG][k]!=null) el.setAttribute("aria-label", I18N[LANG][k]);
+    });
+  }
 
   /* ---------- Render a reading from array of paragraph strings ---------- */
   function renderReading(paras){
     readingEl.innerHTML = "";
     if(!paras || !paras.length){
-      readingEl.innerHTML = '<p class="hint-empty">No text loaded. Paste your reading and click “Load this text.”</p>';
+      readingEl.innerHTML = '<p class="hint-empty">'+escapeHTML(t("reading_empty_hint"))+'</p>';
       return;
     }
-    paras.forEach(function(t){
+    paras.forEach(function(txt){
       var p = document.createElement("p");
-      p.textContent = t;
+      p.textContent = txt;
       readingEl.appendChild(p);
     });
   }
@@ -529,7 +910,6 @@
     var sel = window.getSelection();
     if(!sel || sel.rangeCount === 0 || sel.isCollapsed) return null;
     var range = sel.getRangeAt(0);
-    // selection must be inside the reading element
     if(!readingEl.contains(range.commonAncestorContainer)) return null;
     var text = sel.toString().replace(/\s+/g," ").trim();
     if(text.length < 2) return null;
@@ -546,28 +926,27 @@
   function updateAddState(){
     addTagsBtn.disabled = !(lastRange && pendingTypes.length);
     if(pendingTypes.length){
-      tbHint.textContent = pendingTypes.length===1 ? "1 label selected — press Add to log." : pendingTypes.length+" labels selected — press Add to log.";
+      tbHint.textContent = pendingTypes.length===1 ? t("tag_hintOne") : tf("tag_hintMany",{n:pendingTypes.length});
     } else {
-      tbHint.textContent = "Pick one or more labels for your selection.";
+      tbHint.textContent = t("tag_hintDefault");
     }
   }
 
   function refreshSelectionState(){
     var s = getReadingSelection();
     if(s){
-      // a fresh selection (different text) starts a new tagging set
       if(s.text !== lastText){ resetToggles(); }
       lastRange = s.range;
       lastText = s.text;
       setToggleButtonsEnabled(true);
       var preview = s.text.length > 90 ? s.text.slice(0,90) + "…" : s.text;
-      selPreview.innerHTML = "Selected: <b>“" + escapeHTML(preview) + "”</b> — choose one or more labels.";
+      selPreview.innerHTML = escapeHTML(t("tag_selPrefix")) + "<b>“" + escapeHTML(preview) + "”</b>" + escapeHTML(t("tag_selSuffix"));
     } else if(lastRange && pendingTypes.length){
-      // keep the captured selection active while the student is still toggling (mobile-safe)
+      /* keep the captured selection active while still toggling (mobile-safe) */
     } else if(!pendingTypes.length){
       lastRange = null; lastText = "";
       setToggleButtonsEnabled(false);
-      selPreview.textContent = "Select text in the reading above, then choose how it made you think.";
+      selPreview.textContent = t("tag_selPreviewDefault");
     }
     updateAddState();
   }
@@ -575,7 +954,7 @@
   document.addEventListener("selectionchange", refreshSelectionState);
 
   /* ---------- Toggle labels ---------- */
-  tagButtons.addEventListener("mousedown", function(e){ e.preventDefault(); }); // keep selection alive on click
+  tagButtons.addEventListener("mousedown", function(e){ e.preventDefault(); });
   tagButtons.addEventListener("click", function(e){
     var btn = e.target.closest("button[data-type]");
     if(!btn || btn.disabled) return;
@@ -590,7 +969,7 @@
   function addMarker(){
     if(!lastRange || !lastText || !pendingTypes.length) return;
     var range = lastRange, text = lastText;
-    var types = TYPE_ORDER.filter(function(t){ return pendingTypes.indexOf(t)>=0; });
+    var types = TYPE_ORDER.filter(function(t2){ return pendingTypes.indexOf(t2)>=0; });
 
     var id = nextId++;
     var span = document.createElement("span");
@@ -598,9 +977,9 @@
     span.setAttribute("data-id", String(id));
     span.setAttribute("tabindex","0");
     span.setAttribute("role","button");
-    var labelList = types.map(function(t){return TYPES[t].label;}).join(", ");
-    span.setAttribute("aria-label", labelList + " mark: " + text);
-    span.title = labelList + " — click to jump to your reflection";
+    var labelList = types.map(function(t2){return typeLabel(t2);}).join(", ");
+    span.setAttribute("aria-label", tf("mark_aria",{labels:labelList, text:text}));
+    span.title = tf("mark_title",{labels:labelList});
 
     try{
       range.surroundContents(span);
@@ -610,7 +989,7 @@
         span.appendChild(frag);
         range.insertNode(span);
       }catch(err){
-        alert("That selection crossed too many elements to mark cleanly. Try selecting within a single paragraph.");
+        alert(t("alert_cross"));
         return;
       }
     }
@@ -622,12 +1001,11 @@
       if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); focusMarker(id); }
     });
 
-    // reset tagging UI
     window.getSelection().removeAllRanges();
     lastRange = null; lastText = "";
     resetToggles();
     setToggleButtonsEnabled(false);
-    selPreview.textContent = "Select text in the reading above, then choose how it made you think.";
+    selPreview.textContent = t("tag_selPreviewDefault");
     updateAddState();
 
     renderLog();
@@ -641,7 +1019,7 @@
   /* ---------- Render the log ---------- */
   function renderLog(){
     if(!markers.length){
-      logEl.innerHTML = '<p class="log-empty">No moments marked yet. Select some text above to begin.</p>';
+      logEl.innerHTML = '<p class="log-empty">'+escapeHTML(t("log_empty"))+'</p>';
       renderCounts();
       renderMatrix();
       return;
@@ -657,10 +1035,10 @@
       head.className = "m-head";
       var chipWrap = document.createElement("div");
       chipWrap.style.display="flex"; chipWrap.style.flexWrap="wrap"; chipWrap.style.gap="6px";
-      m.types.forEach(function(t){
+      m.types.forEach(function(ty){
         var chip = document.createElement("span");
         chip.className = "chip";
-        chip.innerHTML = '<span class="dot '+t+'" style="width:12px;height:12px;border-radius:50%"></span>'+TYPES[t].label;
+        chip.innerHTML = '<span class="dot '+ty+'" style="width:12px;height:12px;border-radius:50%"></span>'+escapeHTML(typeLabel(ty));
         chipWrap.appendChild(chip);
       });
       head.appendChild(chipWrap);
@@ -671,23 +1049,23 @@
       q.textContent = "“" + m.text + "”";
       card.appendChild(q);
 
-      m.types.forEach(function(t){
+      m.types.forEach(function(ty){
         var block = document.createElement("div");
         block.className = "label-block";
         var lc = document.createElement("span");
         lc.className = "chip";
-        lc.innerHTML = '<span class="dot '+t+'" style="width:12px;height:12px;border-radius:50%"></span>'+TYPES[t].label;
+        lc.innerHTML = '<span class="dot '+ty+'" style="width:12px;height:12px;border-radius:50%"></span>'+escapeHTML(typeLabel(ty));
         block.appendChild(lc);
         var pr = document.createElement("p");
         pr.className = "prompt";
-        pr.textContent = TYPES[t].prompt;
+        pr.textContent = typePrompt(ty);
         block.appendChild(pr);
         var ta = document.createElement("textarea");
-        ta.id = "ref-"+m.id+"-"+t;
-        ta.setAttribute("aria-label","Reflection for "+TYPES[t].label+" on this passage");
-        ta.placeholder = "Your reflection…";
-        ta.value = m.reflections[t] || "";
-        ta.addEventListener("input", function(){ m.reflections[t] = ta.value; });
+        ta.id = "ref-"+m.id+"-"+ty;
+        ta.setAttribute("aria-label", tf("refl_aria",{label:typeLabel(ty)}));
+        ta.placeholder = t("refl_ph");
+        ta.value = m.reflections[ty] || "";
+        ta.addEventListener("input", function(){ m.reflections[ty] = ta.value; });
         block.appendChild(ta);
         card.appendChild(block);
       });
@@ -695,10 +1073,10 @@
       var foot = document.createElement("div");
       foot.className = "m-foot";
       var jump = document.createElement("button");
-      jump.className = "icon-btn"; jump.type="button"; jump.textContent="Find in text";
+      jump.className = "icon-btn"; jump.type="button"; jump.textContent=t("btn_find");
       jump.addEventListener("click", function(){ scrollToMark(m.id); });
       var del = document.createElement("button");
-      del.className = "icon-btn"; del.type="button"; del.textContent="Delete";
+      del.className = "icon-btn"; del.type="button"; del.textContent=t("btn_delete");
       del.addEventListener("click", function(){ removeMarker(m.id); });
       foot.appendChild(jump); foot.appendChild(del);
       card.appendChild(foot);
@@ -714,14 +1092,14 @@
     var total = markers.length;
     var totalChip = document.createElement("span");
     totalChip.className="chip";
-    totalChip.innerHTML = "<strong>"+total+"</strong>&nbsp;passage(s)";
+    totalChip.innerHTML = "<strong>"+total+"</strong>&nbsp;"+escapeHTML(t("count_passagesWord"));
     countGrid.appendChild(totalChip);
-    Object.keys(TYPES).forEach(function(t){
-      var n = markers.filter(function(m){return m.types.indexOf(t)>=0;}).length;
+    TYPE_ORDER.forEach(function(ty){
+      var n = markers.filter(function(m){return m.types.indexOf(ty)>=0;}).length;
       if(n>0){
         var c=document.createElement("span");
         c.className="chip";
-        c.innerHTML='<span class="dot '+t+'" style="width:12px;height:12px;border-radius:50%"></span>'+TYPES[t].label+": "+n;
+        c.innerHTML='<span class="dot '+ty+'" style="width:12px;height:12px;border-radius:50%"></span>'+escapeHTML(typeLabel(ty))+": "+n;
         countGrid.appendChild(c);
       }
     });
@@ -731,42 +1109,41 @@
   function renderMatrix(){
     if(!matrixTable) return;
     if(!markers.length){
-      matrixTable.innerHTML = '<tbody><tr><td class="matrix-empty">Your matrix fills in as you tag passages. Mark a few moments above to see the pattern.</td></tr></tbody>';
+      matrixTable.innerHTML = '<tbody><tr><td class="matrix-empty">'+escapeHTML(t("mx_empty"))+'</td></tr></tbody>';
       if(patternNote){ patternNote.hidden = true; patternNote.innerHTML = ""; }
       return;
     }
-    var head = "<thead><tr><th>#</th><th>Passage</th>";
-    TYPE_ORDER.forEach(function(t){ head += '<th class="type-col" title="'+TYPES[t].label+'">'+TYPES[t].label+'</th>'; });
+    var head = "<thead><tr><th>"+escapeHTML(t("mx_colHash"))+"</th><th>"+escapeHTML(t("mx_colPassage"))+"</th>";
+    TYPE_ORDER.forEach(function(ty){ head += '<th class="type-col" title="'+escapeHTML(typeLabel(ty))+'">'+escapeHTML(typeLabel(ty))+'</th>'; });
     head += "</tr></thead>";
 
     var body = "<tbody>";
     markers.forEach(function(m,i){
       var ex = m.text.length>120 ? m.text.slice(0,120)+"…" : m.text;
       body += "<tr><td>"+(i+1)+'</td><td class="passage-cell">“'+escapeHTML(ex)+'”</td>';
-      TYPE_ORDER.forEach(function(t){
-        var on = m.types.indexOf(t)>=0;
-        body += '<td class="type-cell">'+(on ? '<span class="mx-dot" style="background:var(--c-'+t+')" title="'+TYPES[t].label+'" aria-label="'+TYPES[t].label+'"></span>' : '<span aria-hidden="true" style="color:#cdd2da">·</span>')+'</td>';
+      TYPE_ORDER.forEach(function(ty){
+        var on = m.types.indexOf(ty)>=0;
+        body += '<td class="type-cell">'+(on ? '<span class="mx-dot" style="background:var(--c-'+ty+')" title="'+escapeHTML(typeLabel(ty))+'" aria-label="'+escapeHTML(typeLabel(ty))+'"></span>' : '<span aria-hidden="true" style="color:#cdd2da">·</span>')+'</td>';
       });
       body += "</tr>";
     });
     body += "</tbody>";
     matrixTable.innerHTML = head + body;
 
-    // pattern note: overlaps + dominant column
     if(patternNote){
       var overlaps = markers.filter(function(m){return m.types.length>1;}).length;
-      var counts = TYPE_ORDER.map(function(t){return {t:t,n:markers.filter(function(m){return m.types.indexOf(t)>=0;}).length};})
+      var counts = TYPE_ORDER.map(function(ty){return {t:ty,n:markers.filter(function(m){return m.types.indexOf(ty)>=0;}).length};})
                              .filter(function(o){return o.n>0;})
                              .sort(function(a,b){return b.n-a.n;});
       var bits = [];
-      bits.push("You have tagged <strong>"+markers.length+"</strong> passage(s).");
+      bits.push(tf("pat_tagged",{n:markers.length}));
       if(counts.length){
-        bits.push("Your most frequent reaction is <strong>"+TYPES[counts[0].t].label+"</strong> ("+counts[0].n+").");
+        bits.push(tf("pat_frequent",{label:typeLabel(counts[0].t), n:counts[0].n}));
       }
       if(overlaps>0){
-        bits.push("<strong>"+overlaps+"</strong> passage(s) triggered more than one kind of friction — those overlaps are often the richest material for your reflection.");
+        bits.push(tf("pat_overlaps",{n:overlaps}));
       } else {
-        bits.push("Tip: try tagging a passage with two labels at once to surface a tension worth writing about.");
+        bits.push(t("pat_tip"));
       }
       patternNote.innerHTML = bits.join(" ");
       patternNote.hidden = false;
@@ -793,7 +1170,6 @@
     markers.forEach(function(m,i){ if(m.id===id) idx=i; });
     if(idx<0) return;
     var m = markers[idx];
-    // unwrap the highlight span
     if(m.node && m.node.parentNode){
       var parent = m.node.parentNode;
       while(m.node.firstChild){ parent.insertBefore(m.node.firstChild, m.node); }
@@ -810,19 +1186,18 @@
 
   function setSource(mode){
     var sample = mode==="sample";
-    srcSample.setAttribute("aria-pressed", sample?"true":"false");
-    srcPaste.setAttribute("aria-pressed", sample?"false":"true");
-    pasteWrap.hidden = sample;
     if(sample){
-      if(markers.length && !confirmReplace()) { // revert toggle if cancelled
-        return;
-      }
+      if(markers.length && !confirmReplace()){ return; }
+      sourceMode = "sample";
+      srcSample.setAttribute("aria-pressed","true");
+      srcPaste.setAttribute("aria-pressed","false");
+      pasteWrap.hidden = true;
       resetMarks();
-      renderReading(SAMPLE);
+      renderReading(SAMPLE[LANG]);
     }
   }
   function confirmReplace(){
-    return window.confirm("Loading a new reading will clear your current marks and reflections. Continue?");
+    return window.confirm(t("confirm_replace"));
   }
   function resetMarks(){
     markers = []; nextId = 1; lastRange=null;
@@ -831,6 +1206,7 @@
 
   srcSample.addEventListener("click", function(){ setSource("sample"); });
   srcPaste.addEventListener("click", function(){
+    sourceMode = "paste";
     srcSample.setAttribute("aria-pressed","false");
     srcPaste.setAttribute("aria-pressed","true");
     pasteWrap.hidden = false;
@@ -838,8 +1214,9 @@
 
   document.getElementById("loadPaste").addEventListener("click", function(){
     var raw = pasteBox.value.replace(/\r/g,"").trim();
-    if(!raw){ alert("Paste some text first."); return; }
+    if(!raw){ alert(t("alert_paste_empty")); return; }
     if(markers.length && !confirmReplace()) return;
+    sourceMode = "paste";
     resetMarks();
     var paras = raw.split(/\n\s*\n/).map(function(s){return s.replace(/\n/g," ").trim();}).filter(Boolean);
     if(!paras.length) paras=[raw];
@@ -848,47 +1225,41 @@
   });
   document.getElementById("clearMarksFromPaste").addEventListener("click", function(){
     if(!markers.length){ return; }
-    if(window.confirm("Clear all marks and reflections? The reading text stays.")){
-      // unwrap all
+    if(window.confirm(t("confirm_clear"))){
       markers.slice().forEach(function(m){ removeMarker(m.id); });
     }
   });
 
-  /* ---------- Summary ---------- */
-  function escapeHTML(s){return String(s).replace(/[&<>"]/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c];});}
-
+  /* ---------- Summary (plain text) ---------- */
   function buildSummary(){
     var name = document.getElementById("nameField").value.trim();
     var d = new Date();
-    var dateStr = d.toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"});
+    var dateStr = d.toLocaleDateString(t("locale"),{year:"numeric",month:"long",day:"numeric"});
     var L=[];
-    L.push("READING FRICTION TRACKER — REFLECTION SUMMARY");
+    L.push(t("sum_title"));
     L.push("==================================================");
-    if(name) L.push("Name: "+name);
-    L.push("Date: "+dateStr);
+    if(name) L.push(t("sum_name")+name);
+    L.push(t("sum_date")+dateStr);
     L.push("");
 
-    // counts
-    L.push("FRICTION AT A GLANCE");
-    L.push("Passages marked: "+markers.length);
+    L.push(t("sum_glance"));
+    L.push(t("sum_marked")+markers.length);
     var overlaps=markers.filter(function(m){return m.types.length>1;}).length;
-    L.push("Passages with more than one label: "+overlaps);
-    TYPE_ORDER.forEach(function(t){
-      var n=markers.filter(function(m){return m.types.indexOf(t)>=0;}).length;
-      if(n>0) L.push("  • "+TYPES[t].label+": "+n);
+    L.push(t("sum_multi")+overlaps);
+    TYPE_ORDER.forEach(function(ty){
+      var n=markers.filter(function(m){return m.types.indexOf(ty)>=0;}).length;
+      if(n>0) L.push("  • "+typeLabel(ty)+": "+n);
     });
     L.push("");
 
-    // synthesis matrix (text)
-    L.push("SYNTHESIS MATRIX  (Cf=Confusion  Ag=Agreement  Sk=Skepticism  Cn=Connection  Im=Importance  Ex=Example)");
+    L.push(t("sum_mx_legend"));
     L.push("--------------------------------------------------");
     if(!markers.length){
-      L.push("(No passages were tagged.)");
+      L.push(t("sum_none_tagged"));
     } else {
-      var ab={confusion:"Cf",agreement:"Ag",skepticism:"Sk",connection:"Cn",importance:"Im",example:"Ex"};
-      L.push("  #  | Cf Ag Sk Cn Im Ex | Passage");
+      L.push(t("sum_mx_header"));
       markers.forEach(function(m,i){
-        var row = TYPE_ORDER.map(function(t){ return m.types.indexOf(t)>=0 ? " X" : " ."; }).join("");
+        var row = TYPE_ORDER.map(function(ty){ return m.types.indexOf(ty)>=0 ? " X" : " ."; }).join("");
         var ex = m.text.length>56 ? m.text.slice(0,56)+"…" : m.text;
         var num = (i+1<10?" ":"")+(i+1);
         L.push("  "+num+" |"+row+" | "+ex);
@@ -896,40 +1267,38 @@
     }
     L.push("");
 
-    // each marker with per-label reflections
-    L.push("MOMENTS OF FRICTION");
+    L.push(t("sum_moments"));
     L.push("--------------------------------------------------");
     if(!markers.length){
-      L.push("(No moments were marked.)");
+      L.push(t("sum_none_marked"));
     } else {
       markers.forEach(function(m,i){
-        L.push((i+1)+". Passage: “"+m.text+"”");
-        L.push("   Labels: "+m.types.map(function(t){return TYPES[t].label;}).join(", "));
-        m.types.forEach(function(t){
-          var r=((m.reflections&&m.reflections[t])||"").trim();
-          L.push("   - "+TYPES[t].label+": "+(r?r:"(left blank)"));
+        L.push((i+1)+". "+t("sum_passage")+"“"+m.text+"”");
+        L.push("   "+t("sum_labels")+m.types.map(function(ty){return typeLabel(ty);}).join(", "));
+        m.types.forEach(function(ty){
+          var r=((m.reflections&&m.reflections[ty])||"").trim();
+          L.push("   - "+typeLabel(ty)+": "+(r?r:t("sum_blank")));
         });
         L.push("");
       });
     }
 
-    // synthesis
     var q1=document.getElementById("q1").value.trim();
     var q2=document.getElementById("q2").value.trim();
     var q3=document.getElementById("q3").value.trim();
-    L.push("HOW MY THINKING CHANGED");
+    L.push(t("sum_changed"));
     L.push("--------------------------------------------------");
-    L.push("Where I felt the most friction:");
-    L.push("  "+(q1||"(left blank)"));
+    L.push(t("sum_q1"));
+    L.push("  "+(q1||t("sum_blank")));
     L.push("");
-    L.push("How my thinking changed from start to end:");
-    L.push("  "+(q2||"(left blank)"));
+    L.push(t("sum_q2"));
+    L.push("  "+(q2||t("sum_blank")));
     L.push("");
-    L.push("What I’ll do differently as a reader next time:");
-    L.push("  "+(q3||"(left blank)"));
+    L.push(t("sum_q3"));
+    L.push("  "+(q3||t("sum_blank")));
     L.push("");
     L.push("==================================================");
-    L.push("Reading Friction Tracker by Marc Watkins (University of Mississippi), CC BY 4.0.");
+    L.push(t("sum_footer"));
     return L.join("\n");
   }
 
@@ -943,8 +1312,8 @@
     var out=document.getElementById("summaryOut");
     if(!out.value.trim()){ out.value=buildSummary(); }
     var note=document.getElementById("copiedNote");
-    var done=function(){ note.textContent="Copied!"; setTimeout(function(){note.textContent="";},2500); };
-    var fail=function(){ out.focus(); out.select(); note.textContent="Press Ctrl/Cmd+C to copy."; };
+    var done=function(){ note.textContent=t("note_copied"); setTimeout(function(){note.textContent="";},2500); };
+    var fail=function(){ out.focus(); out.select(); note.textContent=t("note_copy_fail"); };
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(out.value).then(done).catch(function(){
         out.focus(); out.select();
@@ -957,130 +1326,114 @@
   });
 
   /* ---------- Visual report ---------- */
-  var COLORS = {
-    confusion:"#8e44ad", agreement:"#1e7d4f", skepticism:"#b8860b",
-    connection:"#1f6f9e", importance:"#CE1126", example:"#c2410c"
-  };
   function val(id){ var el=document.getElementById(id); return el ? el.value.trim() : ""; }
 
   function buildReportBodyHTML(){
     var name = val("nameField");
-    var dateStr = new Date().toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"});
+    var dateStr = new Date().toLocaleDateString(t("locale"),{year:"numeric",month:"long",day:"numeric"});
     var q1=val("q1"), q2=val("q2"), q3=val("q3");
     var totalLabels = markers.reduce(function(a,m){return a+m.types.length;},0);
     var overlaps = markers.filter(function(m){return m.types.length>1;}).length;
-    var typesUsed = TYPE_ORDER.filter(function(t){return markers.some(function(m){return m.types.indexOf(t)>=0;});});
-    var counts = {}; TYPE_ORDER.forEach(function(t){ counts[t]=markers.filter(function(m){return m.types.indexOf(t)>=0;}).length; });
-    var maxC = Math.max(1, Math.max.apply(null, TYPE_ORDER.map(function(t){return counts[t];})));
+    var typesUsed = TYPE_ORDER.filter(function(ty){return markers.some(function(m){return m.types.indexOf(ty)>=0;});});
+    var counts = {}; TYPE_ORDER.forEach(function(ty){ counts[ty]=markers.filter(function(m){return m.types.indexOf(ty)>=0;}).length; });
+    var maxC = Math.max(1, Math.max.apply(null, TYPE_ORDER.map(function(ty){return counts[ty];})));
 
     var H = [];
     H.push('<div class="report-head">');
-    H.push('<p class="report-title">Reading Friction Tracker &mdash; Reflection Report</p>');
-    H.push('<p class="report-sub">A metacognitive reading activity for digital media studies</p>');
+    H.push('<p class="report-title">'+t("report_title")+'</p>');
+    H.push('<p class="report-sub">'+t("report_sub")+'</p>');
     H.push('<p class="report-meta">'+(name?('<strong>'+escapeHTML(name)+'</strong> &middot; '):'')+escapeHTML(dateStr)+'</p>');
     H.push('</div>');
 
-    // stats
-    H.push('<h3>Friction at a glance</h3>');
+    H.push('<h3>'+t("report_glance")+'</h3>');
     H.push('<div class="rstats">');
-    H.push('<div class="rstat"><b>'+markers.length+'</b>passages tagged</div>');
-    H.push('<div class="rstat"><b>'+totalLabels+'</b>friction labels</div>');
-    H.push('<div class="rstat"><b>'+overlaps+'</b>multi-label passages</div>');
-    H.push('<div class="rstat"><b>'+typesUsed.length+'</b>of 6 friction types used</div>');
+    H.push('<div class="rstat"><b>'+markers.length+'</b>'+t("report_stat_passages")+'</div>');
+    H.push('<div class="rstat"><b>'+totalLabels+'</b>'+t("report_stat_labels")+'</div>');
+    H.push('<div class="rstat"><b>'+overlaps+'</b>'+t("report_stat_multi")+'</div>');
+    H.push('<div class="rstat"><b>'+typesUsed.length+'</b>'+t("report_stat_types")+'</div>');
     H.push('</div>');
 
-    // chart
-    H.push('<h3>How your friction was distributed</h3>');
+    H.push('<h3>'+t("report_dist")+'</h3>');
     if(!markers.length){
-      H.push('<p class="rqa-a blank">No passages tagged.</p>');
+      H.push('<p class="rqa-a blank">'+t("report_none")+'</p>');
     } else {
       H.push('<div class="chart">');
-      TYPE_ORDER.forEach(function(t){
-        var n=counts[t]; var pct=Math.round((n/maxC)*100);
-        H.push('<div class="chart-row"><div class="chart-label">'+TYPES[t].label+'</div>'+
-               '<div class="chart-track"><div class="chart-fill" style="width:'+pct+'%;background:'+COLORS[t]+'"></div></div>'+
+      TYPE_ORDER.forEach(function(ty){
+        var n=counts[ty]; var pct=Math.round((n/maxC)*100);
+        H.push('<div class="chart-row"><div class="chart-label">'+escapeHTML(typeLabel(ty))+'</div>'+
+               '<div class="chart-track"><div class="chart-fill" style="width:'+pct+'%;background:'+COLORS[ty]+'"></div></div>'+
                '<div class="chart-num">'+n+'</div></div>');
       });
       H.push('</div>');
     }
 
-    // matrix
-    H.push('<h3>Synthesis matrix</h3>');
+    H.push('<h3>'+t("report_mx")+'</h3>');
     if(!markers.length){
-      H.push('<p class="rqa-a blank">No passages tagged.</p>');
+      H.push('<p class="rqa-a blank">'+t("report_none")+'</p>');
     } else {
-      H.push('<table class="rmatrix"><thead><tr><th>#</th><th style="text-align:left">Passage</th>');
-      TYPE_ORDER.forEach(function(t){ H.push('<th>'+TYPES[t].label+'</th>'); });
+      H.push('<table class="rmatrix"><thead><tr><th>#</th><th style="text-align:left">'+escapeHTML(t("mx_colPassage"))+'</th>');
+      TYPE_ORDER.forEach(function(ty){ H.push('<th>'+escapeHTML(typeLabel(ty))+'</th>'); });
       H.push('</tr></thead><tbody>');
       markers.forEach(function(m,i){
         var ex=m.text.length>110?m.text.slice(0,110)+'…':m.text;
         H.push('<tr><td>'+(i+1)+'</td><td class="rp">&ldquo;'+escapeHTML(ex)+'&rdquo;</td>');
-        TYPE_ORDER.forEach(function(t){
-          var on=m.types.indexOf(t)>=0;
-          H.push('<td>'+(on?'<span class="mxd" style="background:'+COLORS[t]+'" title="'+TYPES[t].label+'"></span>':'<span style="color:#cdd2da">&middot;</span>')+'</td>');
+        TYPE_ORDER.forEach(function(ty){
+          var on=m.types.indexOf(ty)>=0;
+          H.push('<td>'+(on?'<span class="mxd" style="background:'+COLORS[ty]+'" title="'+escapeHTML(typeLabel(ty))+'"></span>':'<span style="color:#cdd2da">&middot;</span>')+'</td>');
         });
         H.push('</tr>');
       });
       H.push('</tbody></table>');
     }
 
-    // passage cards with reflections
-    H.push('<h3>Passages &amp; reflections</h3>');
+    H.push('<h3>'+t("report_passrefl")+'</h3>');
     if(!markers.length){
-      H.push('<p class="rqa-a blank">No passages tagged.</p>');
+      H.push('<p class="rqa-a blank">'+t("report_none")+'</p>');
     } else {
-      markers.forEach(function(m,i){
+      markers.forEach(function(m){
         H.push('<div class="rcard" style="border-left-color:'+COLORS[m.types[0]]+'">');
         H.push('<div class="rlabels">');
-        m.types.forEach(function(t){ H.push('<span class="rlabel" style="background:'+COLORS[t]+'">'+TYPES[t].label+'</span>'); });
+        m.types.forEach(function(ty){ H.push('<span class="rlabel" style="background:'+COLORS[ty]+'">'+escapeHTML(typeLabel(ty))+'</span>'); });
         H.push('</div>');
         H.push('<p class="rcard-quote">&ldquo;'+escapeHTML(m.text)+'&rdquo;</p>');
-        m.types.forEach(function(t){
-          var r=((m.reflections&&m.reflections[t])||"").trim();
-          H.push('<p class="rrefl"><span class="rl">'+TYPES[t].label+':</span> '+(r?escapeHTML(r):'<span class="blank">(left blank)</span>')+'</p>');
+        m.types.forEach(function(ty){
+          var r=((m.reflections&&m.reflections[ty])||"").trim();
+          H.push('<p class="rrefl"><span class="rl">'+escapeHTML(typeLabel(ty))+':</span> '+(r?escapeHTML(r):'<span class="blank">'+t("report_blank")+'</span>')+'</p>');
         });
         H.push('</div>');
       });
     }
 
-    // synthesis
-    H.push('<h3>How my thinking changed</h3>');
+    H.push('<h3>'+t("report_changed")+'</h3>');
     H.push('<div class="rqa">');
-    var qa=[["Where I felt the most friction, and why",q1],
-            ["How my thinking changed from start to end",q2],
-            ["What I&rsquo;ll do differently as a reader next time",q3]];
+    var qa=[[t("report_q1"),q1],[t("report_q2"),q2],[t("report_q3"),q3]];
     qa.forEach(function(p){
       H.push('<p class="rqa-q">'+p[0]+'</p>');
-      H.push('<p class="rqa-a'+(p[1]?'':' blank')+'">'+(p[1]?escapeHTML(p[1]):'(left blank)')+'</p>');
+      H.push('<p class="rqa-a'+(p[1]?'':' blank')+'">'+(p[1]?escapeHTML(p[1]):t("report_blank"))+'</p>');
     });
     H.push('</div>');
 
-    // footer
-    H.push('<div class="report-footer"><span class="lic-badge">CC BY 4.0</span>'+
-           '&ldquo;Reading Friction Tracker&rdquo; by Marc Watkins, University of Mississippi, licensed under CC BY 4.0. '+
-           'This activity was developed with the assistance of a generative AI tool; all pedagogical design and review are the author&rsquo;s. '+
-           'No student data is collected, stored, or transmitted.</div>');
+    H.push('<div class="report-footer"><span class="lic-badge">CC BY 4.0</span>'+t("report_footer")+'</div>');
 
     return H.join("");
   }
 
   function buildReportInline(){
-    var rv=document.getElementById("reportView");
-    rv.innerHTML = buildReportBodyHTML();
-    rv.hidden = false;
-    return rv;
+    reportView.innerHTML = buildReportBodyHTML();
+    reportView.hidden = false;
+    return reportView;
   }
 
   document.getElementById("buildReport").addEventListener("click", function(){
-    if(!markers.length){ alert("Tag at least one passage before building your report."); return; }
+    if(!markers.length){ alert(t("alert_report_build")); return; }
     var rv=buildReportInline();
-    document.getElementById("reportNote").textContent="Report built below.";
+    document.getElementById("reportNote").textContent=t("note_report_built");
     setTimeout(function(){document.getElementById("reportNote").textContent="";},2500);
     safeScroll(rv,{block:"start"});
   });
 
   document.getElementById("printReport").addEventListener("click", function(){
-    if(!markers.length){ alert("Tag at least one passage before saving a report."); return; }
+    if(!markers.length){ alert(t("alert_report_print")); return; }
     var rv=buildReportInline();
     var placeholder=document.createComment("rv-home");
     rv.parentNode.insertBefore(placeholder, rv);
@@ -1093,28 +1446,53 @@
   });
 
   document.getElementById("downloadReport").addEventListener("click", function(){
-    if(!markers.length){ alert("Tag at least one passage before downloading a report."); return; }
+    if(!markers.length){ alert(t("alert_report_download")); return; }
     var css=document.getElementById("reportCss").textContent;
     var name=val("nameField");
-    var html='<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">'+
+    var html='<!DOCTYPE html><html lang="'+LANG+'"><head><meta charset="UTF-8">'+
       '<meta name="viewport" content="width=device-width,initial-scale=1">'+
-      '<title>Reading Friction Report'+(name?(' — '+escapeHTML(name)):'')+'</title>'+
+      '<title>'+t("report_doc_title")+(name?(' — '+escapeHTML(name)):'')+'</title>'+
       '<style>body{margin:28px 22px;background:#fff;}'+css+'</style></head><body>'+
       '<div class="report">'+buildReportBodyHTML()+'</div></body></html>';
     var blob=new Blob([html],{type:"text/html"});
     var url=URL.createObjectURL(blob);
     var a=document.createElement("a");
-    var safe=(name||"reading-friction").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"reading-friction";
+    var base=t("download_filename");
+    var safe=(name||base).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||base;
     a.href=url; a.download=safe+"-report.html";
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(function(){URL.revokeObjectURL(url);},3000);
-    document.getElementById("reportNote").textContent="Downloaded.";
+    document.getElementById("reportNote").textContent=t("note_downloaded");
     setTimeout(function(){document.getElementById("reportNote").textContent="";},2500);
   });
 
+  /* ---------- Language switching ---------- */
+  function setLang(lang){
+    if(lang!==LANG){ LANG = lang; }
+    langEn.setAttribute("aria-pressed", LANG==="en" ? "true":"false");
+    langFr.setAttribute("aria-pressed", LANG==="fr" ? "true":"false");
+    applyI18n();
+
+    /* Swap the sample reading text only when nothing would be lost. */
+    if(sourceMode==="sample" && !markers.length){
+      renderReading(SAMPLE[LANG]);
+    }
+    /* Re-render the dynamic chrome in the new language. */
+    renderLog();                 // labels, prompts, counts, matrix
+    refreshSelectionState();     // tag-bar idle text / hints
+    if(reportView && !reportView.hidden && markers.length){
+      buildReportInline();       // keep a visible report in sync
+    }
+  }
+  langEn.addEventListener("click", function(){ setLang("en"); });
+  langFr.addEventListener("click", function(){ setLang("fr"); });
+
   /* ---------- init ---------- */
-  renderReading(SAMPLE);
+  applyI18n();
+  renderReading(SAMPLE[LANG]);
   renderLog();
+  selPreview.textContent = t("tag_selPreviewDefault");
+  tbHint.textContent = t("tag_hintDefault");
 })();
 </script>
 </body>
