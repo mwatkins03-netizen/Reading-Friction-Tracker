@@ -1,14 +1,14 @@
-# Reading Friction Tracker / Suivi de la friction de lecture
+# Reading Friction Tracker / Suivi de la friction de lecture / Rastreador de fricción de lectura
 
 A single-file, no-dependency web activity for digital media studies students. Students mark moments of **friction** in a reading — confusion, agreement, skepticism, connection, importance, or a need for an example — respond to a short metacognitive prompt for each, and generate a copyable reflection summary describing how their thinking changed.
 
-**Bilingual:** the entire activity runs in **English or French**. A language toggle (EN / FR) in the header switches the whole interface, the prompts, the sample reading, the synthesis matrix, the visual report, and the plain-text/HTML exports — and re-localizes the date. Switching language never deletes a student's marks or reflections, so they can read in one language and work in the interface language they prefer.
+**Trilingual:** the entire activity runs in **English, French, or Spanish**. A language toggle (EN / FR / ES) in the header switches the whole interface, the prompts, the sample reading, the synthesis matrix, the visual report, and the plain-text/HTML exports — and re-localizes the date. Switching language never deletes a student's marks or reflections, so they can read in one language and work in the interface language they prefer.
 
 Created by **Marc Watkins**, University of Mississippi. Licensed **CC BY 4.0**.
 
 ## Features
 
-- **English / French toggle** that translates the activity *and* the upload/paste flow, live, without losing student work.
+- **English / French / Spanish toggle** that translates the activity *and* the upload/paste flow, live, without losing student work.
 - Select any text in the reading and tag it with **one or more** kinds of friction at once (mouse drag or press-and-hold on touch), then "Add to log."
 - Each label on a passage opens its own tailored metacognitive reflection prompt.
 - A live **synthesis matrix** lays every tagged passage against the six friction types, surfacing overlaps and reading habits to draw on while writing the reflection.
@@ -21,7 +21,7 @@ Created by **Marc Watkins**, University of Mississippi. Licensed **CC BY 4.0**.
 
 ## Use it
 
-Just open `index.html` in any modern browser. That's the whole app. Use the **EN / FR** buttons in the top-right corner to choose a language at any time.
+Just open `index.html` in any modern browser. That's the whole app. Use the **EN / FR / ES** buttons in the top-right corner to choose a language at any time.
 
 ## Host it on GitHub Pages
 
@@ -54,4 +54,4 @@ This work is licensed under [Creative Commons Attribution 4.0 International (CC 
 
 ## AI disclosure
 
-This activity was developed by Marc Watkins with the assistance of a generative AI tool, which helped draft and structure the HTML, CSS, and JavaScript, and to produce the French translation. All pedagogical design choices, prompts, and final review are the author's. The activity contains no AI features and transmits no student data.
+This activity was developed by Marc Watkins with the assistance of a generative AI tool, which helped draft and structure the HTML, CSS, and JavaScript, and to produce the French and Spanish translations. All pedagogical design choices, prompts, and final review are the author's. The activity contains no AI features and transmits no student data.

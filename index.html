@@ -328,9 +328,10 @@
 <header class="site">
   <div class="inner">
     <div class="topbar">
-      <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <div class="lang-toggle" role="group" aria-label="Language / Langue / Idioma">
         <button id="langEn" type="button" aria-pressed="true">EN</button>
         <button id="langFr" type="button" aria-pressed="false">FR</button>
+        <button id="langEs" type="button" aria-pressed="false">ES</button>
       </div>
     </div>
     <h1 data-i18n="header_h1">Reading Friction Tracker</h1>
@@ -546,7 +547,7 @@
 
       footer_license:"&ldquo;Reading Friction Tracker&rdquo; by <strong>Marc Watkins</strong>, University of Mississippi, is licensed under <a href=\"https://creativecommons.org/licenses/by/4.0/\" target=\"_blank\" rel=\"noopener\">CC&nbsp;BY&nbsp;4.0</a>. You may share and adapt it with attribution.",
       ai_summary:"AI disclosure",
-      ai_para:"This activity was developed by Marc Watkins with the assistance of a generative AI tool, which helped draft and structure the HTML, CSS, and JavaScript &mdash; and to produce the French translation. All pedagogical design choices, prompts, and final review are the author&rsquo;s. The activity itself runs entirely in your browser and contains no AI features &mdash; it does not generate, evaluate, or transmit any of your responses.",
+      ai_para:"This activity was developed by Marc Watkins with the assistance of a generative AI tool, which helped draft and structure the HTML, CSS, and JavaScript &mdash; and to produce the French and Spanish translations. All pedagogical design choices, prompts, and final review are the author&rsquo;s. The activity itself runs entirely in your browser and contains no AI features &mdash; it does not generate, evaluate, or transmit any of your responses.",
 
       /* friction types */
       type_confusion:"Confusion",
@@ -709,7 +710,7 @@
 
       footer_license:"&laquo;&nbsp;Suivi de la friction de lecture&nbsp;&raquo; par <strong>Marc Watkins</strong>, Université du Mississippi, est sous licence <a href=\"https://creativecommons.org/licenses/by/4.0/deed.fr\" target=\"_blank\" rel=\"noopener\">CC&nbsp;BY&nbsp;4.0</a>. Vous pouvez le partager et l’adapter avec attribution.",
       ai_summary:"Divulgation IA",
-      ai_para:"Cette activité a été développée par Marc Watkins avec l’aide d’un outil d’IA générative, qui a contribué à rédiger et à structurer le HTML, le CSS et le JavaScript &mdash; et à produire la traduction française. Tous les choix de conception pédagogique, les invites et la révision finale relèvent de l’auteur. L’activité elle-même fonctionne entièrement dans votre navigateur et ne contient aucune fonction d’IA &mdash; elle ne génère, n’évalue ni ne transmet aucune de vos réponses.",
+      ai_para:"Cette activité a été développée par Marc Watkins avec l’aide d’un outil d’IA générative, qui a contribué à rédiger et à structurer le HTML, le CSS et le JavaScript &mdash; et à produire les traductions française et espagnole. Tous les choix de conception pédagogique, les invites et la révision finale relèvent de l’auteur. L’activité elle-même fonctionne entièrement dans votre navigateur et ne contient aucune fonction d’IA &mdash; elle ne génère, n’évalue ni ne transmet aucune de vos réponses.",
 
       type_confusion:"Confusion",
       type_agreement:"Accord",
@@ -807,6 +808,164 @@
       download_filename:"friction-de-lecture",
       report_doc_title:"Rapport de friction de lecture",
       locale:"fr-FR"
+    },
+
+    es: {
+      doc_title:"Rastreador de fricción de lectura",
+      header_h1:"Rastreador de fricción de lectura",
+      header_tagline:"Note dónde su pensamiento se engancha en un texto &mdash; y luego observe cómo cambia. Una actividad de lectura metacognitiva para los estudios de medios digitales.",
+      byline_created:"Creado por",
+      byline_org:"Universidad de Mississippi",
+
+      how_h2:"Cómo funciona",
+      how_lead:"La &laquo;&nbsp;fricción&nbsp;&raquo; es cualquier momento en que un texto le hace detenerse &mdash; confusión, acuerdo, duda, una conexión, algo importante, o un lugar donde habría querido un ejemplo. Marcar esos momentos y reflexionar sobre ellos es la forma en que los lectores atentos piensan sobre su propio pensamiento.",
+      how_li1:"Cargue una lectura abajo&nbsp;: use el ejemplo integrado, o pegue su propio texto asignado.",
+      how_li2:"<strong>Seleccione una palabra, frase u oración</strong> en la lectura (arrastre con el ratón, o mantenga pulsado en un teléfono).",
+      how_li3:"En la barra de la parte inferior de la pantalla, toque <strong>uno o más</strong> tipos de fricción que sintió &mdash; un mismo pasaje puede ser confuso <em>e</em> importante a la vez &mdash; y luego pulse <strong>Añadir al registro</strong>.",
+      how_li4:"Aparece una breve pregunta de reflexión para cada etiqueta en su <em>Registro de fricción</em>. Responda cada una en una o dos frases.",
+      how_li5:"Consulte la <em>Matriz de síntesis</em> para ver sus etiquetas una al lado de la otra, responda las preguntas de cierre, y <strong>genere un resumen para copiar</strong> y pegarlo en Blackboard.",
+      how_privacy:"Nada de lo que escriba se guarda ni se envía a ningún sitio. Todo permanece en esta pestaña del navegador y desaparece al cerrarla, así que copie su resumen antes de salir.",
+
+      read_h2:"Su lectura",
+      aria_source:"Elegir la fuente de lectura",
+      aria_friction_types:"Tipos de fricción",
+      aria_matrix:"Matriz de pasajes etiquetados por tipo de fricción",
+      aria_tagbar:"Etiquetar el texto seleccionado",
+      summary_out_label:"Resumen de reflexión generado",
+      src_sample:"Usar el ejemplo",
+      src_paste:"Pegar mi propio texto",
+      paste_label:"Pegue su texto de lectura",
+      paste_ph:"Pegue aquí su lectura asignada. Separe los párrafos con una línea en blanco, y luego haga clic en « Cargar este texto ».",
+      load_btn:"Cargar este texto",
+      clear_btn:"Borrar todas las marcas",
+      reading_aria:"Pasaje de lectura. Seleccione texto para etiquetar un momento de fricción.",
+
+      log_h2:"Su registro de fricción",
+      log_lead:"Cada momento marcado aparece aquí con una pregunta de reflexión para cada etiqueta que aplicó. Procure al menos <strong>cuatro</strong> marcas repartidas en al menos <strong>dos</strong> tipos de fricción distintos &mdash; y observe los pasajes donde se solapa más de un tipo de fricción.",
+
+      mx_h2:"Matriz de síntesis",
+      mx_lead:"Cada pasaje que etiquetó, dispuesto frente a los seis tipos de fricción. Leer una fila muestra dónde un pasaje provocó varias reacciones a la vez&nbsp;; leer una columna revela sus hábitos como lector. Use estos patrones para redactar su reflexión más abajo.",
+
+      syn_h2:"Tome distancia y sintetice",
+      syn_lead:"Estas tres preguntas convierten un montón de reacciones en un relato de cómo <em>cambió</em> su lectura.",
+      name_label:"Su nombre",
+      name_optional:"(opcional &mdash; se usa solo en el texto del resumen)",
+      name_ph:"p. ej., Jordan Rivera",
+      q1_label:"¿Dónde sintió más fricción, y qué hizo que esa parte fuera difícil o conflictiva?",
+      q2_label:"¿Cómo cambió su pensamiento desde el comienzo de la lectura hasta el final?",
+      q3_label:"¿Qué hará de manera diferente como lector — la próxima vez que se encuentre con un texto como este?",
+
+      sum_h2:"Su informe visual",
+      sum_lead:"Convierta todo lo anterior en un informe visual &mdash; una instantánea de la fricción, un gráfico de distribución, su matriz y todas sus reflexiones &mdash; y luego guárdelo como PDF o página web para subirlo a Blackboard.",
+      build_btn:"Generar mi informe",
+      print_btn:"Guardar como PDF",
+      download_btn:"Descargar la página web (.html)",
+      report_pdf_note:"&laquo;&nbsp;Guardar como PDF&nbsp;&raquo; abre el cuadro de impresión de su navegador &mdash; elija <strong>Guardar como PDF</strong> como destino. Suba el PDF (o el archivo .html descargado) a su tarea de Blackboard para que su instructor pueda verlo.",
+      plaintext_summary:"Versión en texto sin formato (para copiar y pegar)",
+      gen_btn:"Generar el texto",
+      copy_btn:"Copiar al portapapeles",
+      summary_ph:"Su resumen en texto aparecerá aquí después de hacer clic en « Generar el texto ».",
+
+      footer_license:"&laquo;&nbsp;Rastreador de fricción de lectura&nbsp;&raquo; por <strong>Marc Watkins</strong>, Universidad de Mississippi, está bajo licencia <a href=\"https://creativecommons.org/licenses/by/4.0/deed.es\" target=\"_blank\" rel=\"noopener\">CC&nbsp;BY&nbsp;4.0</a>. Puede compartirlo y adaptarlo con atribución.",
+      ai_summary:"Divulgación sobre IA",
+      ai_para:"Esta actividad fue desarrollada por Marc Watkins con la ayuda de una herramienta de IA generativa, que contribuyó a redactar y estructurar el HTML, el CSS y el JavaScript &mdash; y a producir las traducciones al francés y al español. Todas las decisiones de diseño pedagógico, las preguntas y la revisión final son del autor. La actividad en sí funciona enteramente en su navegador y no contiene ninguna función de IA &mdash; no genera, evalúa ni transmite ninguna de sus respuestas.",
+
+      type_confusion:"Confusión",
+      type_agreement:"Acuerdo",
+      type_skepticism:"Escepticismo",
+      type_connection:"Conexión",
+      type_importance:"Importancia",
+      type_example:"Necesito un ejemplo",
+      prompt_confusion:"¿Qué es exactamente lo que no queda claro aquí? Nombre la palabra, idea o salto concreto que le perdió — y qué ayudaría a entenderlo.",
+      prompt_agreement:"¿Por qué está de acuerdo? Apóyese en una experiencia, un ejemplo o una prueba que lo respalde para usted.",
+      prompt_skepticism:"¿Qué le hace dudar de esto? ¿Qué falta, y qué haría falta para que cambiara de opinión?",
+      prompt_connection:"¿Con qué se conecta esto — otra lectura, una idea de clase, las noticias, o su propia vida? Explique el vínculo.",
+      prompt_importance:"¿Por qué importa esto? ¿Cómo podría usar esta idea o llevarla a su propio trabajo?",
+      prompt_example:"¿Qué tipo de ejemplo lo haría concreto? Intente esbozar uno propio.",
+
+      tag_confusion:"Confundido/a",
+      tag_agreement:"De acuerdo",
+      tag_skepticism:"Escéptico/a",
+      tag_connection:"Conexión",
+      tag_importance:"Importante",
+      tag_example:"Necesito ejemplo",
+      add_btn:"Añadir al registro",
+
+      tag_selPreviewDefault:"Seleccione texto en la lectura de arriba, y luego elija qué le hizo pensar.",
+      tag_selPrefix:"Selección: ",
+      tag_selSuffix:" — elija una o más etiquetas.",
+      tag_hintDefault:"Elija una o más etiquetas para su selección.",
+      tag_hintOne:"1 etiqueta seleccionada — pulse Añadir al registro.",
+      tag_hintMany:"{n} etiquetas seleccionadas — pulse Añadir al registro.",
+      log_empty:"Aún no hay momentos marcados. Seleccione algún texto arriba para empezar.",
+      count_passagesWord:"pasaje(s)",
+      mx_empty:"Su matriz se completa a medida que etiqueta pasajes. Marque algunos momentos arriba para ver el patrón.",
+      mx_colHash:"#",
+      mx_colPassage:"Pasaje",
+      pat_tagged:"Ha etiquetado <strong>{n}</strong> pasaje(s).",
+      pat_frequent:"Su reacción más frecuente es <strong>{label}</strong> ({n}).",
+      pat_overlaps:"<strong>{n}</strong> pasaje(s) provocaron más de un tipo de fricción — esos solapamientos suelen ser el material más rico para su reflexión.",
+      pat_tip:"Consejo: pruebe a etiquetar un pasaje con dos etiquetas a la vez para hacer aflorar una tensión que valga la pena analizar.",
+      alert_cross:"Esa selección cruzó demasiados elementos para marcarse de forma limpia. Intente seleccionar dentro de un solo párrafo.",
+      confirm_replace:"Cargar una nueva lectura borrará sus marcas y reflexiones actuales. ¿Continuar?",
+      alert_paste_empty:"Pegue primero algún texto.",
+      confirm_clear:"¿Borrar todas las marcas y reflexiones? El texto de la lectura permanece.",
+      reading_empty_hint:"No hay texto cargado. Pegue su lectura y haga clic en « Cargar este texto ».",
+      btn_find:"Localizar en el texto",
+      btn_delete:"Eliminar",
+      refl_ph:"Su reflexión…",
+      refl_aria:"Reflexión para {label} en este pasaje",
+      mark_aria:"{labels} marca: {text}",
+      mark_title:"{labels} — haga clic para ir a su reflexión",
+      alert_report_build:"Etiquete al menos un pasaje antes de generar su informe.",
+      alert_report_print:"Etiquete al menos un pasaje antes de guardar un informe.",
+      alert_report_download:"Etiquete al menos un pasaje antes de descargar un informe.",
+      note_report_built:"Informe generado abajo.",
+      note_downloaded:"Descargado.",
+      note_copied:"¡Copiado!",
+      note_copy_fail:"Pulse Ctrl/Cmd+C para copiar.",
+
+      report_title:"Rastreador de fricción de lectura — Informe de reflexión",
+      report_sub:"Una actividad de lectura metacognitiva para los estudios de medios digitales",
+      report_glance:"La fricción de un vistazo",
+      report_stat_passages:"pasajes etiquetados",
+      report_stat_labels:"etiquetas de fricción",
+      report_stat_multi:"pasajes con varias etiquetas",
+      report_stat_types:"de 6 tipos de fricción usados",
+      report_dist:"Cómo se distribuyó su fricción",
+      report_none:"Ningún pasaje etiquetado.",
+      report_mx:"Matriz de síntesis",
+      report_passrefl:"Pasajes y reflexiones",
+      report_blank:"(en blanco)",
+      report_changed:"Cómo cambió mi pensamiento",
+      report_q1:"Dónde sentí más fricción, y por qué",
+      report_q2:"Cómo cambió mi pensamiento de principio a fin",
+      report_q3:"Qué haré de manera diferente como lector la próxima vez",
+      report_footer:"&laquo;&nbsp;Rastreador de fricción de lectura&nbsp;&raquo; por Marc Watkins, Universidad de Mississippi, bajo licencia CC BY 4.0. Esta actividad se desarrolló con la ayuda de una herramienta de IA generativa; todo el diseño pedagógico y la revisión son del autor. No se recopilan, almacenan ni transmiten datos de los estudiantes.",
+
+      sum_title:"RASTREADOR DE FRICCIÓN DE LECTURA — RESUMEN DE REFLEXIÓN",
+      sum_name:"Nombre: ",
+      sum_date:"Fecha: ",
+      sum_glance:"LA FRICCIÓN DE UN VISTAZO",
+      sum_marked:"Pasajes marcados: ",
+      sum_multi:"Pasajes con más de una etiqueta: ",
+      sum_mx_legend:"MATRIZ DE SÍNTESIS  (Cf=Confusión  Ac=Acuerdo  Es=Escepticismo  Cx=Conexión  Im=Importancia  Ej=Ejemplo)",
+      sum_mx_header:"  #  | Cf Ac Es Cx Im Ej | Pasaje",
+      sum_moments:"MOMENTOS DE FRICCIÓN",
+      sum_none_tagged:"(No se etiquetó ningún pasaje.)",
+      sum_none_marked:"(No se marcó ningún momento.)",
+      sum_passage:"Pasaje: ",
+      sum_labels:"Etiquetas: ",
+      sum_blank:"(en blanco)",
+      sum_changed:"CÓMO CAMBIÓ MI PENSAMIENTO",
+      sum_q1:"Dónde sentí más fricción:",
+      sum_q2:"Cómo cambió mi pensamiento de principio a fin:",
+      sum_q3:"Qué haré de manera diferente como lector la próxima vez:",
+      sum_footer:"Rastreador de fricción de lectura por Marc Watkins (Universidad de Mississippi), CC BY 4.0.",
+
+      download_filename:"friccion-de-lectura",
+      report_doc_title:"Informe de fricción de lectura",
+      locale:"es-ES"
     }
   };
 
@@ -823,6 +982,12 @@
       "Nous avons tendance à parler de ces systèmes comme s’ils se contentaient de nous montrer ce que nous voulons. Mais « ce que nous voulons » n’est pas une donnée fixe que l’algorithme découvre ; c’est en partie une chose que l’algorithme produit. Plus le fil d’actualité apprend quelles publications vous retiennent, plus il façonne les préférences mêmes qu’il prétend servir.",
       "C’est pourquoi l’éducation aux médias ne peut plus se limiter à demander « cette source est-elle fiable ? ». La question la plus difficile est structurelle : pourquoi est-ce que je vois ceci, dans cet ordre, maintenant ? À qui profite le fait que mon attention se pose ici plutôt qu’ailleurs ? Un lecteur averti des médias numériques doit lire le contenant, et pas seulement le contenu.",
       "Rien de tout cela ne signifie que l’individu est impuissant. La friction — ce petit geste de s’arrêter, de douter ou de sortir du réglage par défaut — est en soi une forme de résistance. Lorsque vous remarquez les coutures d’un système conçu pour être sans couture, vous reprenez une part de maîtrise sur votre propre attention."
+    ],
+    es:[
+      "Cada vez que se desplaza por la pantalla, ya se ha tomado por usted una serie de decisiones invisibles. El orden de las publicaciones, los anuncios intercalados entre ellas, el comentario que aparece primero: nada de eso es neutral, y nada es accidental. Un sistema de recomendación ha clasificado todos los contenidos disponibles del mundo en función de una predicción sobre usted.",
+      "Solemos hablar de estos sistemas como si simplemente nos mostraran lo que queremos. Pero «lo que queremos» no es algo fijo que el algoritmo descubre; es en parte algo que el algoritmo produce. Cuanto más aprende el feed qué publicaciones le mantienen desplazándose, más moldea las mismas preferencias que afirma estar atendiendo.",
+      "Por eso la alfabetización mediática ya no puede limitarse a preguntar «¿es verdadera esta fuente?». La pregunta más difícil es estructural: ¿por qué estoy viendo esto, en este orden, ahora mismo? ¿A quién beneficia que mi atención recaiga aquí y no en otro lugar? Un lector competente de medios digitales tiene que leer el contenedor, no solo el contenido.",
+      "Nada de esto significa que el individuo sea impotente. La fricción —el pequeño acto de detenerse, dudar o salirse de lo predeterminado— es en sí misma una forma de resistencia. Cuando nota las costuras de un sistema diseñado para no tenerlas, recupera una parte de la autoría sobre su propia atención."
     ]
   };
 
@@ -872,6 +1037,7 @@
   var reportView = document.getElementById("reportView");
   var langEn = document.getElementById("langEn");
   var langFr = document.getElementById("langFr");
+  var langEs = document.getElementById("langEs");
 
   /* ---------- Apply static translations to the DOM ---------- */
   function applyI18n(){
@@ -1471,6 +1637,7 @@
     if(lang!==LANG){ LANG = lang; }
     langEn.setAttribute("aria-pressed", LANG==="en" ? "true":"false");
     langFr.setAttribute("aria-pressed", LANG==="fr" ? "true":"false");
+    langEs.setAttribute("aria-pressed", LANG==="es" ? "true":"false");
     applyI18n();
 
     /* Swap the sample reading text only when nothing would be lost. */
@@ -1486,6 +1653,7 @@
   }
   langEn.addEventListener("click", function(){ setLang("en"); });
   langFr.addEventListener("click", function(){ setLang("fr"); });
+  langEs.addEventListener("click", function(){ setLang("es"); });
 
   /* ---------- init ---------- */
   applyI18n();
